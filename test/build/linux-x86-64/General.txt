@@ -1,0 +1,11 @@
+System
+	name:            el_test
+	target:          classic
+	configuration:   /mnt/Development/Eiffel/Eiffel-Loop/test/test.ecf
+	location:        /mnt/Development/Eiffel/Eiffel-Loop/test/build/linux-x86-64
+	compilation:     /mnt/Development/Eiffel/Eiffel-Loop/test/build/linux-x86-64/EIFGENs/classic
+	tag_concurrency: tag_concurrency_thread
+	console:         yes
+
+Root Class
+	APPLICATION_ROOT (project): make
