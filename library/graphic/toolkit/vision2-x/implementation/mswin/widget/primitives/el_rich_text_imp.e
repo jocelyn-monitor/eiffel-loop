@@ -1,23 +1,21 @@
-note
+﻿note
 	description: "[
 		Rich text control that responds to HOME and END keyboard shortcuts (without Ctrl combination)
 	]"
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-03-02 21:12:45 GMT (Saturday 2nd March 2013)"
-	revision: "2"
+	date: "2015-04-04 7:44:23 GMT (Saturday 4th April 2015)"
+	revision: "4"
 
 class
 	EL_RICH_TEXT_IMP
 
 inherit
 	EL_RICH_TEXT_I
-		rename
-			set_selection as text_component_imp_set_selection
 		undefine
 			text_length, selected_text
 		redefine

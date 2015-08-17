@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_COLOR_BUTTON}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-03-06 10:36:38 GMT (Thursday 6th March 2014)"
-	revision: "3"
+	date: "2015-03-16 17:46:32 GMT (Monday 16th March 2015)"
+	revision: "5"
 
 class
 	EL_COLOR_BUTTON
@@ -76,16 +76,7 @@ feature -- Element change
 					end
 				end
 			)
---			resize_actions.extend (agent (a_x, a_y, a_width, a_height: INTEGER_32)
---				do
---					if not is_color_initialized and a_height > 10 then
---						set_color (initial_rgb_code)
---						is_color_initialized := True
---					end
---				end
---			)
 		end
-
 
 feature -- Access
 
@@ -97,7 +88,7 @@ feature {NONE} -- Implementation
 
 	window: EV_WINDOW
 
-	title_text: EL_ASTRING
+	title_text: ASTRING
 
 	set_color_action: PROCEDURE [ANY, TUPLE [INTEGER]]
 

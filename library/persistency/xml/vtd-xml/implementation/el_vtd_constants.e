@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Summary description for {EL_VTD_CONSTANTS}."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2012 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-01-03 21:04:32 GMT (Thursday 3rd January 2013)"
-	revision: "2"
+	date: "2014-12-11 14:33:26 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 class
 	EL_VTD_CONSTANTS

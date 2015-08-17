@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Summary description for {EXTRACT_TAG_INFO_SYSTEM_COMMAND}."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-06-25 19:35:33 GMT (Tuesday 25th June 2013)"
-	revision: "2"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "3"
 
 class
 	EL_EXTRACT_ID3_TAGS_COMMAND

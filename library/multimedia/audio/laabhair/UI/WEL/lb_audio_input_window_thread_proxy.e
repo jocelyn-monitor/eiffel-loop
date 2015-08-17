@@ -1,16 +1,16 @@
-note
+﻿note
 	description: "[
 		Proxy object to (asynchronously) call procedures of LB_AUDIO_INPUT_WINDOW from 
 		an external thread (non GUI thread)
 	]"
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2012 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2012-12-16 11:34:28 GMT (Sunday 16th December 2012)"
-	revision: "1"
+	date: "2014-12-11 14:34:36 GMT (Thursday 11th December 2014)"
+	revision: "3"
 
 class
 	LB_AUDIO_INPUT_WINDOW_THREAD_PROXY

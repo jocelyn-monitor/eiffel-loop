@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_EIFFEL_SOURCE_MANIFEST_CLASS_RENAMER}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-22 10:04:11 GMT (Saturday 22nd February 2014)"
-	revision: "4"
+	date: "2015-03-11 13:47:23 GMT (Wednesday 11th March 2015)"
+	revision: "6"
 
 class
 	EIFFEL_CLASS_RENAMER_COMMAND
@@ -82,7 +82,7 @@ feature {NONE} -- Implementation
 
 	change_manifest_class_name
 		local
-			lower_old_class_name: EL_ASTRING
+			lower_old_class_name: ASTRING
 			found: BOOLEAN
 		do
 			log.enter ("change_manifest_class_name")

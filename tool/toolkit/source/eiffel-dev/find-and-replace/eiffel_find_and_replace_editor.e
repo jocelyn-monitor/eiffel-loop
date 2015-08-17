@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EIFFEL_FIND_AND_REPLACE_SOURCE_EDITOR}."
 
 	author: "Finnian Reilly"
@@ -6,17 +6,14 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-21 9:47:34 GMT (Friday 21st February 2014)"
-	revision: "2"
+	date: "2015-01-01 12:45:38 GMT (Thursday 1st January 2015)"
+	revision: "4"
 
 class
 	EIFFEL_FIND_AND_REPLACE_EDITOR
 
 inherit
 	EIFFEL_SOURCE_EDITING_PROCESSOR
-		rename
-			make as make_editor
-		end
 
 create
 	make
@@ -28,7 +25,7 @@ feature {NONE} -- Initialization
 		do
 			find_text := a_find_text
 			replacement_text := a_replacement_text
-			make_editor
+			make_default
 		end
 
 feature {NONE} -- Pattern definitions

@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-06-24 7:51:29 GMT (Monday 24th June 2013)"
-	revision: "2"
+	date: "2015-05-22 17:22:34 GMT (Friday 22nd May 2015)"
+	revision: "4"
 
 class
 	EIFFEL_SOURCE_TREE_PROCESSOR
@@ -21,7 +21,7 @@ inherit
 create
 	make, default_create
 
-feature {EL_COMMAND_LINE_SUB_APPLICATTION} -- Initialization
+feature {EL_COMMAND_LINE_SUB_APPLICATION} -- Initialization
 
 	make (a_path: like source_directory_path; a_file_processor: EL_FILE_PROCESSOR)
 			--

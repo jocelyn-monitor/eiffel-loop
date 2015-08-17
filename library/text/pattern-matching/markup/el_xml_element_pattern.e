@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-23 10:59:02 GMT (Saturday 23rd November 2013)"
-	revision: "2"
+	date: "2014-12-22 16:18:28 GMT (Monday 22nd December 2014)"
+	revision: "4"
 
 class
 	EL_XML_ELEMENT_PATTERN
@@ -44,14 +44,14 @@ feature {NONE} -- Initialization
 					create {ARRAYED_LIST [EL_TEXTUAL_PATTERN]}.make_from_array (nested_elements)
 				)
 			end
-			nested_element_alternatives.extend (comment)
+			nested_element_alternatives.extend (comment (Default_match_action))
 
 			make_pattern ( <<
 				-- 	<tag a1="value"> some stuff </tag>
 				all_of ( <<
-					named_opening_element (tag_name,">", attribute_patterns),
-					zero_or_more ( nested_element_alternatives  ),
-					named_closing_element (tag_name)
+--					named_opening_element (tag_name,">", attribute_patterns),
+--					zero_or_more ( nested_element_alternatives),
+--					named_closing_element (tag_name)
 				>> ),
 
 				-- 	<tag a1="value"/>

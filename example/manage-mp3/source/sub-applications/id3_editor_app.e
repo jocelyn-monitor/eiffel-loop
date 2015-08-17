@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {LIBID3_TEST_APP}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-20 12:00:44 GMT (Thursday 20th February 2014)"
-	revision: "5"
+	date: "2015-03-11 14:05:46 GMT (Wednesday 11th March 2015)"
+	revision: "6"
 
 class
 	ID3_EDITOR_APP
@@ -38,7 +38,7 @@ feature -- Testing
 --			create command.make (a_media_dir, agent edits.save_album_picture_id3 (?, ?, "Rafael Canaro"))
 --			create command.make (a_media_dir, agent edits.set_version_23)
 --			create command.make (a_media_dir, agent edits.normalize_comment)
-			create command.make (a_media_dir, agent edits.print_id3)
+--			create command.make (a_media_dir, agent edits.print_id3)
 --			create command.make (a_media_dir, agent edits.test)
 
 			normal_run
@@ -53,16 +53,18 @@ feature {NONE} -- Implementation
 			Result := agent command.make
 		end
 
-	default_operands: TUPLE [a_media_dir: EL_DIR_PATH]
+	default_operands: TUPLE [a_media_dir: EL_DIR_PATH; edition_name: ASTRING]
 		do
 			create Result
 			Result.a_media_dir := ""
+			Result.edition_name := "default"
 		end
 
 	argument_specs: ARRAY [like Type_argument_specification]
 		do
 			Result := <<
-				required_existing_path_argument ("mp3_dir", "Path to root directory of MP3 files")
+				required_existing_path_argument ("mp3_dir", "Path to root directory of MP3 files"),
+				required_argument ("task", "Edition task name")
 			>>
 		end
 
@@ -78,11 +80,11 @@ feature {NONE} -- Constants
 			--
 		do
 			Result := <<
-				[{ID3_EDITOR_APP}, "*"],
-				[{EL_TEST_ROUTINES}, "*"],
-				[{ID3_EDITOR}, "*"],
-				[{EL_ID3_INFO}, "*"],
-				[{ID3_EDITS}, "*"]
+				[{ID3_EDITOR_APP}, All_routines],
+				[{EL_TEST_ROUTINES}, All_routines],
+				[{ID3_EDITOR}, All_routines],
+				[{EL_ID3_INFO}, No_routines],
+				[{ID3_EDITS}, All_routines]
 			>>
 		end
 

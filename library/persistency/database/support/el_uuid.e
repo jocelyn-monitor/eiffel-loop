@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_UUID}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-04 9:47:47 GMT (Saturday 4th January 2014)"
-	revision: "3"
+	date: "2015-05-15 15:44:21 GMT (Friday 15th May 2015)"
+	revision: "5"
 
 class
 	EL_UUID
@@ -18,13 +18,23 @@ inherit
 			is_equal
 		end
 
-	EL_MEMORY_READ_WRITEABLE
+	EL_STORABLE
+		rename
+			read_version as read_default_version
 		undefine
-			out, is_equal
+			out
+		redefine
+			read_default, write
 		end
 
 create
-	default_create, make, make_from_string
+	make_default, make, make_from_string
+
+feature {NONE} -- Initialization
+
+	make_default
+		do
+		end
 
 feature -- Element change
 
@@ -46,17 +56,6 @@ feature -- Basic operations
 			a_writer.write_natural_64 (data_5)
 		end
 
-feature -- Comparison
-
-	is_equal (other: like Current): BOOLEAN
-		do
-			Result := data_1 = other.data_1
-				and then data_2 = other.data_2
-				and then data_3 = other.data_3
-				and then data_4 = other.data_4
-				and then data_5 = other.data_5
-		end
-
 feature -- Constants
 
 	Byte_count: INTEGER
@@ -64,10 +63,4 @@ feature -- Constants
 			Result := (32 + 16 * 3 + 64) // 8
 		end
 
-feature {NONE} -- Contract Support
-
-	new_item: like Current
-		do
-			create Result
-		end
 end

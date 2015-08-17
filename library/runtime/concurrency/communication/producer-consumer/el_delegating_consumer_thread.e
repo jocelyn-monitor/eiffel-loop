@@ -1,15 +1,15 @@
-note
+﻿note
 	description: "[
 		Consumer thread
 	]"
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2012 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2012-12-16 11:34:30 GMT (Sunday 16th December 2012)"
-	revision: "1"
+	date: "2015-04-23 10:34:15 GMT (Thursday 23rd April 2015)"
+	revision: "2"
 
 class
 	EL_DELEGATING_CONSUMER_THREAD [P, CONSUMER_TYPE -> EL_MANY_TO_ONE_CONSUMER_THREAD [P] create make end]
@@ -20,23 +20,21 @@ inherit
 			consume_product as delegate_consumption_of_next_product,
 			is_waiting as is_waiting_for_new_queue_item
 		redefine
-			product_queue, on_stopping, stop, make
---		select
---			default_create
+			make, make_default, product_queue, on_stopping, stop
 		end
 
 	EL_SUSPENDABLE_THREAD
-		rename
-			make as make_suspendable
 		undefine
-			default_create, is_equal, copy
+			is_equal, copy
+		redefine
+			make_default
 		end
 
 	EL_EVENT_LISTENER
 		rename
 			notify as continue_if_waiting_for_consumer
 		undefine
-			default_create, is_equal, copy
+			is_equal, copy
 		end
 
 create
@@ -44,11 +42,16 @@ create
 
 feature {NONE} -- Initialization
 
+	make_default
+		do
+			Precursor {EL_SUSPENDABLE_THREAD}
+			Precursor {EL_CONSUMER_THREAD}
+		end
+
 	make
 			--
 		do
 			Precursor
-			make_suspendable
 			disable_logging
 		end
 

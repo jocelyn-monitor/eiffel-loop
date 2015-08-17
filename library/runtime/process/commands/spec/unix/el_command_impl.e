@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_COMMAND_IMPL}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-24 14:49:48 GMT (Friday 24th January 2014)"
-	revision: "3"
+	date: "2014-12-28 13:38:52 GMT (Sunday 28th December 2014)"
+	revision: "4"
 
 deferred class
 	EL_COMMAND_IMPL
@@ -27,5 +27,14 @@ feature -- Access
 			create Result.make (output_file_path)
 			Result.set_encoding (Result.Encoding_UTF, 8)
 		end
+
+feature -- Constants
+
+	Path_escaper: EL_BASH_PATH_CHARACTER_ESCAPER
+		once
+			create Result
+		end
+
+	Error_redirection_suffix: STRING = " 2>&1"
 
 end

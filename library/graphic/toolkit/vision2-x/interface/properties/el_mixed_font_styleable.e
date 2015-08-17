@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Routines for label components with mixed font styles"
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-03-26 14:54:31 GMT (Wednesday 26th March 2014)"
-	revision: "2"
+	date: "2014-12-11 14:33:27 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 deferred class
 	EL_MIXED_FONT_STYLEABLE

@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_WAV_FADER}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-10-12 11:45:55 GMT (Saturday 12th October 2013)"
-	revision: "3"
+	date: "2015-01-01 18:32:15 GMT (Thursday 1st January 2015)"
+	revision: "4"
 
 class
 	EL_WAV_FADER
@@ -32,12 +32,9 @@ inherit
 		end
 
 	EL_MULTIMEDIA_CONSTANTS
-
-	EL_MODULE_ENVIRONMENT
-
-	EL_MODULE_LOG
-
-	EL_MODULE_DIRECTORY
+		undefine
+			default_create
+		end
 
 create
 	make
@@ -84,8 +81,8 @@ feature {NONE} -- Evolicity reflection
 			--
 		do
 			create Result.make (<<
-				["input_file_path",	 agent: EL_ASTRING do Result := escaped_path (input_file_path) end],
-				["output_file_path",	 agent: EL_ASTRING do Result := escaped_path (output_file_path) end],
+				["input_file_path",	 agent: EL_PATH do Result := input_file_path end],
+				["output_file_path",	 agent: EL_PATH do Result := output_file_path end],
 				["fade_in",				 agent: REAL_REF do Result := fade_in.to_reference end],
 				["duration", 			 agent: REAL_REF do Result := duration.to_reference end],
 				["fade_out", 			 agent: REAL_REF do Result := fade_out.to_reference end]

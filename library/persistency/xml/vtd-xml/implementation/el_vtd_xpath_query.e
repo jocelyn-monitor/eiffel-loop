@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_VTD_XPATH_QUERY}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-25 20:05:25 GMT (Tuesday 25th February 2014)"
-	revision: "4"
+	date: "2015-03-11 13:54:27 GMT (Wednesday 11th March 2015)"
+	revision: "6"
 
 class
 	EL_VTD_XPATH_QUERY
@@ -102,7 +102,7 @@ feature -- Acces
 			Result := c_evaluate_xpath_to_number (context.self_ptr, self_ptr)
 		end
 
-	evaluate_string: EL_ASTRING
+	evaluate_string: ASTRING
 			--
 		do
 			Result := wide_string (c_evaluate_xpath_to_string (context.self_ptr, self_ptr))

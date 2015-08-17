@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Summary description for {EL_ROUTINE_CALL_SERVICE_STATS}."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2012 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2012-12-16 11:34:29 GMT (Sunday 16th December 2012)"
-	revision: "1"
+	date: "2015-05-10 15:56:48 GMT (Sunday 10th May 2015)"
+	revision: "3"
 
 class
 	EL_ROUTINE_CALL_SERVICE_STATS
@@ -91,19 +91,19 @@ feature -- Access
 
 	max_threads: INTEGER
 
-	thread_count: EL_SYNCHRONIZED_NUMERIC [INTEGER]
+	thread_count: EL_MUTEX_NUMERIC [INTEGER]
 
-	queued_connection_count: EL_SYNCHRONIZED_NUMERIC [INTEGER]
+	queued_connection_count: EL_MUTEX_NUMERIC [INTEGER]
 
-	procedure_count: EL_SYNCHRONIZED_NUMERIC [INTEGER]
+	procedure_count: EL_MUTEX_NUMERIC [INTEGER]
 
-	function_count: EL_SYNCHRONIZED_NUMERIC [INTEGER]
+	function_count: EL_MUTEX_NUMERIC [INTEGER]
 
-	bytes_received_count: EL_SYNCHRONIZED_NUMERIC [INTEGER_64]
+	bytes_received_count: EL_MUTEX_NUMERIC [INTEGER_64]
 
-	bytes_sent_count: EL_SYNCHRONIZED_NUMERIC [INTEGER_64]
+	bytes_sent_count: EL_MUTEX_NUMERIC [INTEGER_64]
 
-	failure_count: EL_SYNCHRONIZED_NUMERIC [INTEGER]
+	failure_count: EL_MUTEX_NUMERIC [INTEGER]
 
 feature -- Basic operations
 

@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_ID3_HEADER}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-10-03 16:40:16 GMT (Thursday 3rd October 2013)"
-	revision: "2"
+	date: "2015-03-11 14:04:21 GMT (Wednesday 11th March 2015)"
+	revision: "4"
 
 class
 	EL_ID3_HEADER
@@ -24,7 +24,7 @@ feature {NONE} -- Initialization
 		local
 			l_file: RAW_FILE
 		do
-			create l_file.make_open_read (a_file_path.unicode)
+			create l_file.make_open_read (a_file_path)
 			make_from_file (l_file)
 			l_file.close
 		end
@@ -43,9 +43,10 @@ feature {NONE} -- Initialization
 
 feature -- Access
 
-	version_name: EL_ASTRING
+	version_name: ASTRING
 		do
-			Result := String.template ("ID3v2.$S.$S").substituted (<< major_version, revision >>)
+			Result := "ID3v2.$S.$S"
+			Result.substitute_tuple ([major_version, revision])
 		end
 
 	version: REAL

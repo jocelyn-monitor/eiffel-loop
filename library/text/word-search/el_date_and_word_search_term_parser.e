@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Summary description for {EL_DATE_AND_WORD_SEARCH_TERM_PARSER}."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2012 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2012-12-16 11:34:32 GMT (Sunday 16th December 2012)"
-	revision: "1"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "2"
 
 class
 	EL_DATE_AND_WORD_SEARCH_TERM_PARSER  [G -> {EL_WORD_SEARCHABLE, EL_DATEABLE}]
@@ -98,19 +98,19 @@ feature {NONE} -- Match actions
 
 	on_day (matched_text: EL_STRING_VIEW)
 		do
-			last_date.set_day (matched_text.view.to_integer)
+			last_date.set_day (matched_text.to_string_8.to_integer)
 		end
 
 	on_month (matched_text: EL_STRING_VIEW)
 		do
-			last_date.set_month (matched_text.view.to_integer)
+			last_date.set_month (matched_text.to_string_8.to_integer)
 		end
 
 	on_year (matched_text: EL_STRING_VIEW)
 		local
 			number: INTEGER
 		do
-			number := matched_text.view.to_integer
+			number := matched_text.to_string_8.to_integer
 			if number < 100 then
 				number := number + (last_date.year // 100) * 100
 			end

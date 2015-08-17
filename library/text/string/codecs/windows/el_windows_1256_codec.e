@@ -6,8 +6,8 @@
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-08-03 10:25:49 GMT (Saturday 3rd August 2013)"
-	revision: "3"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 class
 	EL_WINDOWS_1256_CODEC
@@ -140,40 +140,55 @@ feature -- Conversion
 			Result := code + offset
 		end
 
-	unicode_case_change_substitute (c: CHARACTER): CHARACTER_32
+	unicode_case_change_substitute (code: NATURAL): CHARACTER_32
 			-- Returns Unicode case change character if c does not have a latin case change
 			-- or else the Null character
 		do
-			inspect c
-				when 'ƒ' then
+			inspect code
+				-- ƒ -> Ƒ
+				when 131 then
 					Result := 'Ƒ'
-				when 'µ' then
+				-- µ -> Μ
+				when 181 then
 					Result := 'Μ'
-				when 'à' then
+				-- à -> À
+				when 224 then
 					Result := 'À'
-				when 'â' then
+				-- â -> Â
+				when 226 then
 					Result := 'Â'
-				when 'ç' then
+				-- ç -> Ç
+				when 231 then
 					Result := 'Ç'
-				when 'è' then
+				-- è -> È
+				when 232 then
 					Result := 'È'
-				when 'é' then
+				-- é -> É
+				when 233 then
 					Result := 'É'
-				when 'ê' then
+				-- ê -> Ê
+				when 234 then
 					Result := 'Ê'
-				when 'ë' then
+				-- ë -> Ë
+				when 235 then
 					Result := 'Ë'
-				when 'î' then
+				-- î -> Î
+				when 238 then
 					Result := 'Î'
-				when 'ï' then
+				-- ï -> Ï
+				when 239 then
 					Result := 'Ï'
-				when 'ô' then
+				-- ô -> Ô
+				when 244 then
 					Result := 'Ô'
-				when 'ù' then
+				-- ù -> Ù
+				when 249 then
 					Result := 'Ù'
-				when 'û' then
+				-- û -> Û
+				when 251 then
 					Result := 'Û'
-				when 'ü' then
+				-- ü -> Ü
+				when 252 then
 					Result := 'Ü'
 			else end
 		end

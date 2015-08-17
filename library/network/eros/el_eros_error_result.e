@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Summary description for {EL_EROS_ERROR}."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-06-24 12:03:12 GMT (Monday 24th June 2013)"
-	revision: "2"
+	date: "2015-03-11 17:30:25 GMT (Wednesday 11th March 2015)"
+	revision: "4"
 
 class
 	EL_EROS_ERROR_RESULT
@@ -15,24 +15,22 @@ class
 inherit
 	EL_BUILDABLE_XML_FILE_PERSISTENT
 		redefine
-			default_create, building_action_table
+			building_action_table
 		end
 
 	EL_REMOTE_CALL_CONSTANTS
-		undefine
-			default_create
-		end
 
 create
 	make
 
 feature {NONE} -- Initialization
 
-	default_create
+	make
 			--
 		do
 			create description.make_empty
 			create detail.make_empty
+			make_default
 		end
 
 feature -- Access

@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EIFFEL_ATTRIBUTE_INSERTION_CLASS_EDITOR}."
 
 	author: "Finnian Reilly"
@@ -6,17 +6,14 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-10-03 11:31:31 GMT (Thursday 3rd October 2013)"
-	revision: "3"
+	date: "2015-01-01 12:43:19 GMT (Thursday 1st January 2015)"
+	revision: "6"
 
 class
 	EIFFEL_ATTRIBUTE_INSERTION_CLASS_EDITOR
 
 inherit
-	EL_TEXT_FILE_EDITOR
-		rename
-			make as make_editor
-		end
+	EL_EIFFEL_TEXT_FILE_EDITOR
 
 	EL_EIFFEL_PATTERN_FACTORY
 
@@ -35,7 +32,7 @@ feature {NONE} -- Initialization
 			insert_access_index: INTEGER
 			insertion_marker_pattern: EL_LITERAL_TEXTUAL_PATTERN
 		do
-			make_editor
+			make_default
 			create pattern_array.make (insertion_marker_list.count)
 			insertion_marker_list.compare_objects
 

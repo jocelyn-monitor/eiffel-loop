@@ -1,4 +1,4 @@
- note
+﻿ note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-20 11:48:24 GMT (Wednesday 20th November 2013)"
-	revision: "2"
+	date: "2015-01-01 15:27:19 GMT (Thursday 1st January 2015)"
+	revision: "4"
 
 deferred class
 	EL_BUILDABLE_FROM_XML
@@ -20,21 +20,17 @@ inherit
 
 	EL_EIF_OBJ_BUILDER_CONTEXT
 		redefine
-			make, create_building_actions
+			make_default, create_building_actions
 		end
 
 feature {EL_EIF_OBJ_FACTORY_ROOT_BUILDER_CONTEXT} -- Initialization
 
-	make
+	make_default
 			--
 		do
 			Precursor
 			PI_building_actions := PI_building_actions_by_type.item (Current, agent create_pi_building_actions)
 			create xml_name_space.make_empty
-		end
-
-	make_default
-		deferred
 		end
 
 feature -- Access

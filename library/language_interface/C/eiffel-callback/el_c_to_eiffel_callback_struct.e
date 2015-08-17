@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		Object with a target callable from C. 
 		The target is temporarily fixed in memory and guaranteed not to be moved by the garbage collector.
@@ -6,12 +6,12 @@ note
 	]"
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2012 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2012-12-16 11:34:27 GMT (Sunday 16th December 2012)"
-	revision: "1"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "3"
 
 class
 	EL_C_TO_EIFFEL_CALLBACK_STRUCT [TARGET -> EL_C_CALLABLE create make end]

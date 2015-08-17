@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Dummy file persistent"
 
 	author: "Finnian Reilly"
@@ -6,17 +6,14 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-04 9:53:06 GMT (Saturday 4th January 2014)"
-	revision: "3"
+	date: "2014-12-11 14:33:26 GMT (Thursday 11th December 2014)"
+	revision: "5"
 
 class
 	EL_FILE_PERSISTENT_IMPL
 
 inherit
 	EL_FILE_PERSISTENT
-		redefine
-			make
-		end
 
 create
 	make, make_from_file

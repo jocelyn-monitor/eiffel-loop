@@ -1,16 +1,16 @@
-note
+﻿note
 	description: "[
 		Efficient Boyer-Moore Search for Unicode Strings
 		See: http://www.codeproject.com/KB/recipes/bmsearch.aspx
 	]"
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2012 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2012-12-16 11:34:32 GMT (Sunday 16th December 2012)"
-	revision: "1"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "2"
 
 class
 	EL_BOYER_MOORE_SEARCHER_32

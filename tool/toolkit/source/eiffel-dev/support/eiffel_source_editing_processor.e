@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_EIFFEL_SOURCE_EDITING_PROCESSOR}."
 
 	author: "Finnian Reilly"
@@ -6,14 +6,23 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-22 10:27:03 GMT (Saturday 22nd February 2014)"
-	revision: "4"
+	date: "2014-12-11 14:34:36 GMT (Thursday 11th December 2014)"
+	revision: "7"
 
 deferred class
 	EIFFEL_SOURCE_EDITING_PROCESSOR
 
 inherit
 	EL_FILE_EDITING_PROCESSOR
+		undefine
+			put_string
+		end
+
+	EL_EIFFEL_TEXT_FILE_EDITOR
+		rename
+			edit_text as edit_file,
+			set_input_file_path as set_convertor_input_file_path
+		end
 
 	EL_EIFFEL_PATTERN_FACTORY
 

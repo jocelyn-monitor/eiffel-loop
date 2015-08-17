@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-04 10:10:31 GMT (Saturday 4th January 2014)"
-	revision: "4"
+	date: "2015-01-01 12:38:33 GMT (Thursday 1st January 2015)"
+	revision: "6"
 
 class
 	EL_SOURCE_TEXT_PROCESSOR
@@ -15,7 +15,6 @@ class
 inherit
 	EL_FILE_PARSER
 		rename
-			make as make_parser,
 			new_pattern as delimiting_pattern
 		export
 			{NONE} all
@@ -40,7 +39,7 @@ feature {NONE} -- Initialization
 	make_with_delimiter (a_pattern: EL_TEXTUAL_PATTERN)
 
 		do
-			make_parser
+			make_default
 			delimiting_pattern := a_pattern
 		end
 

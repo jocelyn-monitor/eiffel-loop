@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-07-31 7:50:09 GMT (Wednesday 31st July 2013)"
-	revision: "3"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 class
 	EVOLICITY_OBJECT_TABLE [G]
@@ -16,6 +16,6 @@ inherit
 	EL_ASTRING_HASH_TABLE [G]
 
 create
-	default_create, make, make_equal, make_with_count
+	default_create, make, make_equal, make_size
 
 end

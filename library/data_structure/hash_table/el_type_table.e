@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Summary description for {EL_TYPE_TABLE}."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-07-04 8:15:04 GMT (Thursday 4th July 2013)"
-	revision: "2"
+	date: "2015-05-03 10:50:58 GMT (Sunday 3rd May 2015)"
+	revision: "3"
 
 class
 	EL_TYPE_TABLE [BASE_TYPE, G]
@@ -19,7 +19,7 @@ inherit
 			remove as remove_function
 		end
 
-	EL_MODULE_TYPING
+	EL_MODULE_EIFFEL
 		undefine
 			is_equal, copy
 		end
@@ -34,7 +34,7 @@ feature -- Access
 		local
 			type_id: INTEGER
 		do
-			type_id := Typing.dynamic_type (object)
+			type_id := Eiffel.dynamic_type (object)
 			search (type_id)
 			if found then
 				Result := found_item
@@ -48,6 +48,6 @@ feature -- Removal
 
 	remove (object: BASE_TYPE)
 		do
-			remove_function (Typing.dynamic_type (object))
+			remove_function (Eiffel.dynamic_type (object))
 		end
 end

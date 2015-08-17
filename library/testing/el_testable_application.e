@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_TESTABLE_APPLICATION}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-10-18 19:52:25 GMT (Friday 18th October 2013)"
-	revision: "4"
+	date: "2015-06-27 21:01:20 GMT (Saturday 27th June 2015)"
+	revision: "6"
 
 deferred class
 	EL_TESTABLE_APPLICATION
@@ -26,7 +26,7 @@ feature -- Status query
 	is_test_mode: BOOLEAN
 			--
 		once
-			Result := Args.word_option_argument (latin_option_name).is_equal ("test")
+			Result := Args.value (new_option_name).is_equal ("test")
 		end
 
 feature -- Basic operations
@@ -34,7 +34,10 @@ feature -- Basic operations
 	initialize
 			--
 		do
-			if not is_test_mode then
+			if is_test_mode and then Directory.current_working /~ Test_data_directory then
+				Execution.change_working_path (Test_data_directory.to_path)
+			end
+			if not skip_normal_normal_initialize then
 				normal_initialize
 			end
 		end
@@ -43,9 +46,6 @@ feature -- Basic operations
 			--
 		do
 			if is_test_mode then
-				if Execution.current_working_directory /~ Test_data_directory then
-					Execution.change_working_path (Test_data_directory.to_path)
-				end
 				test_run
 			else
 				normal_run
@@ -54,7 +54,7 @@ feature -- Basic operations
 
 feature {NONE} -- Implementation
 
-	latin_option_name: EL_ASTRING
+	new_option_name: ASTRING
 			--
 		deferred
 		end
@@ -62,6 +62,11 @@ feature {NONE} -- Implementation
 	normal_initialize
 			--
 		deferred
+		end
+
+	skip_normal_normal_initialize: BOOLEAN
+		do
+			Result := is_test_mode
 		end
 
 	test_initialize

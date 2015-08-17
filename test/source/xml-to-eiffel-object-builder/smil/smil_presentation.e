@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,16 +6,18 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-08-02 11:16:31 GMT (Friday 2nd August 2013)"
-	revision: "3"
+	date: "2015-01-01 14:17:41 GMT (Thursday 1st January 2015)"
+	revision: "5"
 
 class
 	SMIL_PRESENTATION
 
 inherit
 	EL_BUILDABLE_XML_FILE_PERSISTENT
+		rename
+			make_default as make
 		redefine
-			default_create, building_action_table, getter_function_table, PI_building_action_table,
+			make, building_action_table, getter_function_table, PI_building_action_table,
 			on_context_exit
 		end
 
@@ -34,9 +36,10 @@ create
 
 feature {NONE} -- Initialization
 
-	default_create
+	make
 			--
 		do
+			Precursor
 			create audio_sequence.make (7)
 			create title.make_empty
 
@@ -145,9 +148,7 @@ feature {NONE} -- Constants
 				<seq id="seq_$sequence.id" title="$sequence.title">
 				#if $sequence.audio_clip_list.count > 0 then	
 					#foreach $clip in $sequence.audio_clip_list loop
-					<audio id="audio_$clip.id" src="$clip.source" title="$clip.title"
-						clipBegin="${clip.onset}s" clipEnd="${clip.offset}s"
-					/>
+					<audio id="audio_$clip.id" src="$clip.source" title="$clip.title" clipBegin="${clip.onset}s" clipEnd="${clip.offset}s"/>
 					#end
 				#end
 				</seq>

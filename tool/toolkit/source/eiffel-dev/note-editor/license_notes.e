@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {LICENSE_INFO}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-21 10:52:47 GMT (Friday 21st February 2014)"
-	revision: "4"
+	date: "2015-03-11 13:47:35 GMT (Wednesday 11th March 2015)"
+	revision: "6"
 
 class
 	LICENSE_NOTES
@@ -15,37 +15,34 @@ class
 inherit
 	EL_BUILDABLE_FROM_PYXIS
 		redefine
-			default_create, building_action_table
+			make_default, building_action_table
 		end
 
 	EL_MODULE_LOG
-		undefine
-			default_create
-		end
 
 create
-	make_from_file, make_from_string
+	make_default, make_from_file, make_from_string
 
 feature {NONE} -- Initialization
 
-	default_create
-			--
+	make_default
 		do
 			create author.make_empty
 			create copyright.make_empty
 			create contact.make_empty
 			create license.make_empty
+			Precursor
 		end
 
 feature -- Access
 
-	author: EL_ASTRING
+	author: ASTRING
 
-	copyright: EL_ASTRING
+	copyright: ASTRING
 
-	contact: EL_ASTRING
+	contact: ASTRING
 
-	license: EL_ASTRING
+	license: ASTRING
 
 feature {NONE} -- Build from XML
 

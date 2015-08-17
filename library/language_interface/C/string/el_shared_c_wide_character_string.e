@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_SHARED_C_WIDE_CHARACTER_STRING}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-25 10:00:36 GMT (Tuesday 25th February 2014)"
-	revision: "4"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "6"
 
 class
 	EL_SHARED_C_WIDE_CHARACTER_STRING
@@ -16,8 +16,12 @@ feature -- Access
 
 	wide_string (a_native_string: POINTER): EL_C_WIDE_CHARACTER_STRING
 		do
-			Result := Internal_wide_string
-			Result.set_owned_from_c (a_native_string)
+			if a_native_string = Default_pointer then
+				create Result
+			else
+				Result := Internal_wide_string
+				Result.set_owned_from_c (a_native_string)
+			end
 		end
 
 feature {NONE} -- Constants

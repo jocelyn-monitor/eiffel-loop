@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		insert string:
 			<rect x="0" y="0" width="x" height="x" style="fill:#FFFFFF"/> 
@@ -6,12 +6,12 @@ note
 	]"
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-06-18 8:34:59 GMT (Tuesday 18th June 2013)"
-	revision: "2"
+	date: "2014-12-11 14:33:27 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 class
 	EL_SVG_BACKGROUND_COLOR_INSERTER

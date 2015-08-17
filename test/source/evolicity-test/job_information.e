@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-03-28 10:37:46 GMT (Friday 28th March 2014)"
-	revision: "2"
+	date: "2015-01-01 14:28:14 GMT (Thursday 1st January 2015)"
+	revision: "4"
 
 class
 	JOB_INFORMATION
@@ -27,7 +27,7 @@ feature -- Initialization
 	)
 			--
 		do
-			make_eiffel_context
+			make_default
 			title := a_title
 			duration := a_duration
 			description := a_description

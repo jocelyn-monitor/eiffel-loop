@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_SINGLE_OPERAND_FILE_SYSTEM_COMMAND}."
 
 	author: "Finnian Reilly"
@@ -6,19 +6,27 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-10-12 11:33:30 GMT (Saturday 12th October 2013)"
-	revision: "4"
+	date: "2015-06-24 10:35:29 GMT (Wednesday 24th June 2015)"
+	revision: "5"
 
 deferred class
-	EL_SINGLE_OPERAND_FILE_SYSTEM_COMMAND [T -> EL_COMMAND_IMPL create default_create end]
+	EL_SINGLE_OPERAND_FILE_SYSTEM_COMMAND [T -> EL_COMMAND_IMPL create make end]
 
 inherit
 	EL_FILE_SYSTEM_OS_COMMAND [T]
+		redefine
+			make_default, default_create
+		end
 
 feature {NONE} -- Initialization
 
 	make_default
-			--
+		do
+			create {EL_DIR_PATH} path
+			Precursor
+		end
+
+	default_create
 		do
 			make_command
 		end
@@ -26,7 +34,7 @@ feature {NONE} -- Initialization
 	make (a_path: like path)
 			--
 		do
-			make_default
+			make_command
 			path := a_path
 		end
 
@@ -57,13 +65,13 @@ feature {NONE} -- Evolicity reflection
 			--
 		do
 			create Result.make (<<
-				["path", agent: EL_ASTRING do Result := escaped_path (path) end]
+				["path", agent: EL_PATH do Result := path end]
 			>>)
 		end
 
 feature -- Constants
 
-	Valid_extension: EL_ASTRING
+	Valid_extension: ASTRING
 		once
 			create Result.make_empty
 		end

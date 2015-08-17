@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-05 13:18:29 GMT (Sunday 5th January 2014)"
-	revision: "2"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 deferred class
 	EL_TEXT_FILE_TEST_EDITOR
@@ -20,10 +20,10 @@ inherit
 
 feature {NONE} -- Implementation
 
-	new_output: IO_MEDIUM
+	new_output: EL_TEXT_IO_MEDIUM
 			--
 		do
-			Result := io.output
+			create Result.make_open_write (source_text.count)
 		end
 
 	close

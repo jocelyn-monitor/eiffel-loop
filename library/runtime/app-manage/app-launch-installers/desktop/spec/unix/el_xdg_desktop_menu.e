@@ -1,23 +1,21 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-07-22 18:08:01 GMT (Monday 22nd July 2013)"
-	revision: "3"
+	date: "2015-01-01 13:37:46 GMT (Thursday 1st January 2015)"
+	revision: "4"
 
 class
 	EL_XDG_DESKTOP_MENU
 
 inherit
 	EVOLICITY_SERIALIZEABLE_AS_XML
-		rename
-			make as make_serializeable
 		redefine
-			getter_function_table, Template, Encoding_name
+			getter_function_table, Template
 		end
 
 	EL_MODULE_LOG
@@ -37,7 +35,7 @@ feature {NONE} -- Initialization
 	make (a_name, a_file_name: STRING; standard: BOOLEAN)
 			--
 		do
-			make_serializeable
+			make_empty
 			create menus.make (5)
 			create desktop_entries.make
 			name := a_name
@@ -123,10 +121,5 @@ feature {NONE} -- Implementation
 		#end
 		</Menu>
 	]"
-
-	Encoding_name: EL_ASTRING
-		once
-			Result := "UTF-8"
-		end
 
 end

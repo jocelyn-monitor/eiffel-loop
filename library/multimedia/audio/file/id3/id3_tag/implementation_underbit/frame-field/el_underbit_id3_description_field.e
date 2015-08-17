@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_UNDERBIT_ID3_DESCRIPTION_FIELD}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-02 15:45:48 GMT (Saturday 2nd November 2013)"
-	revision: "3"
+	date: "2014-12-11 14:34:36 GMT (Thursday 11th December 2014)"
+	revision: "5"
 
 class
 	EL_UNDERBIT_ID3_DESCRIPTION_FIELD

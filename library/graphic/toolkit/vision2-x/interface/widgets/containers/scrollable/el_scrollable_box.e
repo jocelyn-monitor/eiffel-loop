@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_SCROLLABLE_BOX}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-03-31 12:56:28 GMT (Monday 31st March 2014)"
-	revision: "4"
+	date: "2014-12-11 14:33:27 GMT (Thursday 11th December 2014)"
+	revision: "6"
 
 class
 	EL_SCROLLABLE_BOX [B -> EL_BOX create make end]
@@ -67,6 +67,11 @@ feature -- Access
 	item_width: INTEGER
 		do
 			Result := viewport.item.width
+		end
+
+	scroll_bar_width: INTEGER
+		do
+			Result := scroll_bar.width
 		end
 
 feature -- Element change
@@ -151,6 +156,11 @@ feature -- Status query
 			Result := viewport.resize_actions.state = viewport.resize_actions.Normal_state
 		end
 
+	is_scroll_bar_visible: BOOLEAN
+		do
+			Result := scroll_bar.is_displayed
+		end
+
 feature -- Status setting
 
 	enable_automatic_scrollbar
@@ -161,6 +171,7 @@ feature -- Status setting
 	disable_automatic_scrollbar
 		do
 			viewport.resize_actions.block
+			scroll_bar.hide
 		end
 
 	set_focus
@@ -289,14 +300,14 @@ feature {NONE} -- Implementation
 			end
 		end
 
-	box: B
+	scroll_bar: EV_VERTICAL_SCROLL_BAR
 
 	viewport: EV_VIEWPORT
 
-	scroll_bar: EV_VERTICAL_SCROLL_BAR
-
 	first_widget: EV_WIDGET
 		-- first widget that is not a container or a button
+
+	box: B
 
 feature {NONE} -- Constants
 

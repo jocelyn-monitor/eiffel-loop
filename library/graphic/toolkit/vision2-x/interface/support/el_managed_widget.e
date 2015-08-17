@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		Object to manage a containable widget in a searchable container.
 		The update routine causes the widget item to be replaced with a new widget created by the factory function
@@ -9,8 +9,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-13 10:05:28 GMT (Thursday 13th February 2014)"
-	revision: "2"
+	date: "2014-12-11 14:33:27 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 class
 	EL_MANAGED_WIDGET [W -> EV_WIDGET create default_create end]
@@ -79,6 +79,13 @@ feature -- Access
 	item: W
 
 	container: EV_CONTAINER
+
+feature -- Element change
+
+	set_factory_function (a_factory_function: like factory_function)
+		do
+			factory_function := a_factory_function
+		end
 
 feature {NONE} -- Implementation
 

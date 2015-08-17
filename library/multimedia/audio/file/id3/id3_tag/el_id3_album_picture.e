@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_ID3_ALBUM_PICTURE}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-25 12:26:04 GMT (Monday 25th November 2013)"
-	revision: "2"
+	date: "2015-03-15 10:24:44 GMT (Sunday 15th March 2015)"
+	revision: "4"
 
 class
 	EL_ID3_ALBUM_PICTURE
@@ -42,7 +42,7 @@ feature {NONE} -- Initialization
 			if mime_type.is_equal ("jpg") then
 				mime_type := "jpeg"
 			end
-			mime_type.prepend ("image/")
+			mime_type.prepend_string ("image/")
 			make (File_system.file_data (a_file_path), a_description, mime_type)
 		end
 
@@ -50,11 +50,11 @@ feature -- Access
 
 	data: MANAGED_POINTER
 
-	description: EL_ASTRING
+	description: ASTRING
 
 	checksum: NATURAL
 
-	mime_type: EL_ASTRING
+	mime_type: ASTRING
 
 feature -- Element change
 

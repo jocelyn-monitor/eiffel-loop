@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EIFFEL_LINE_COUNTER_APP}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-24 11:30:35 GMT (Monday 24th February 2014)"
-	revision: "3"
+	date: "2014-12-11 14:34:36 GMT (Thursday 11th December 2014)"
+	revision: "5"
 
 class
 	EIFFEL_CODEBASE_STATISTICS_APP

@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-27 11:59:07 GMT (Monday 27th January 2014)"
-	revision: "3"
+	date: "2014-12-11 14:33:26 GMT (Thursday 11th December 2014)"
+	revision: "5"
 
 deferred class
 	EL_VARIABLE_TABLE [G]
@@ -33,7 +33,7 @@ feature {NONE} -- Initialization
 			file_path.append_file_path (file_name)
 			make (7)
 			from
-				create file_in.make_open_read (file_path.unicode)
+				create file_in.make_open_read (file_path)
 				file_in.read_word
 			until
 				file_in.last_string.count = 0

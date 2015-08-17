@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_XDG_DESKTOP_ENTRY}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-12-06 14:15:08 GMT (Friday 6th December 2013)"
-	revision: "3"
+	date: "2015-03-11 13:54:29 GMT (Wednesday 11th March 2015)"
+	revision: "4"
 
 deferred class
 	EL_XDG_DESKTOP_MENU_ITEM
@@ -19,8 +19,6 @@ inherit
 		end
 
 	EVOLICITY_SERIALIZEABLE
-		rename
-			make as make_serializeable
 		redefine
 			getter_function_table
 		end
@@ -36,7 +34,7 @@ feature {NONE} -- Initialization
 		local
 			last_entry: EL_DESKTOP_MENU_ITEM
 		do
-			make_serializeable
+			make_empty
 			last_entry := menu_path [menu_path.upper]
 			make_entry (last_entry.name, last_entry.comment, last_entry.icon_path)
 			is_standard := last_entry.is_standard
@@ -45,7 +43,7 @@ feature {NONE} -- Initialization
 
 feature -- Access
 
-	file_name: EL_ASTRING
+	file_name: ASTRING
 
 feature -- Element change
 
@@ -53,7 +51,7 @@ feature -- Element change
 			--
 		local
 			l_menu_path: EL_ARRAYED_LIST [EL_DESKTOP_MENU_ITEM]
-			name_list: EL_STRING_LIST [EL_ASTRING]
+			name_list: EL_STRING_LIST [ASTRING]
 		do
 			create l_menu_path.make_from_array (menu_path)
 			if is_standard then
@@ -63,8 +61,8 @@ feature -- Element change
 				file_name := name_list.joined_with ('-', False)
 			end
 			file_name.append_character ('.')
-			file_name.append (file_name_extension)
-			file_name.translate (" ", "-")
+			file_name.append_string (file_name_extension)
+			file_name.replace_character (' ', '-')
 		end
 
 feature {NONE} -- Implementation
@@ -80,9 +78,9 @@ feature {NONE} -- Evolicity reflection
 			--
 		do
 			create Result.make (<<
-				["icon_path", agent: EL_ASTRING do Result := icon_path.to_string end],
-				["comment", agent: EL_ASTRING do Result := comment end],
-				["name", agent: EL_ASTRING do Result := name end]
+				["icon_path", agent: EL_PATH do Result := icon_path end],
+				["comment", agent: ASTRING do Result := comment end],
+				["name", agent: ASTRING do Result := name end]
 			>>)
 		end
 

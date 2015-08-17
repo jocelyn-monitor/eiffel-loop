@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {SHARED_SERIALIZATION_LISTENER}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-03-27 18:40:20 GMT (Thursday 27th March 2014)"
-	revision: "3"
+	date: "2015-06-27 10:17:40 GMT (Saturday 27th June 2015)"
+	revision: "4"
 
 class
 	EL_SHARED_FILE_PROGRESS_LISTENER
@@ -41,7 +41,7 @@ feature {NONE} -- Constants
 
 	Do_nothing_listener: EL_DO_NOTHING_FILE_LISTENER
 		once
-			create Result
+			create Result.make
 		end
 
 end

@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_CPP_OBJECT}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-03 19:19:52 GMT (Sunday 3rd November 2013)"
-	revision: "2"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 deferred class
 	EL_CPP_OBJECT

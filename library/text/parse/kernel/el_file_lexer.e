@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-24 12:59:25 GMT (Sunday 24th November 2013)"
-	revision: "2"
+	date: "2015-01-01 12:36:50 GMT (Thursday 1st January 2015)"
+	revision: "4"
 
 deferred class
 	EL_FILE_LEXER
@@ -15,7 +15,6 @@ deferred class
 inherit
 	EL_FILE_PARSER
 		rename
-			make as make_parser,
 			find_all as do_lexing,
 			consume_events as fill_tokens_text
 		export
@@ -26,7 +25,7 @@ feature {NONE} -- Initialization
 
 	make (a_source_text: like source_text)
 		do
-			make_parser
+			make_default
 			source_text := a_source_text
 			do_lexing
 			create token_text_array.make (event_list.count)

@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Summary description for {EL_SEARCH_ENGINE}."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2012 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2012-12-16 11:34:32 GMT (Sunday 16th December 2012)"
-	revision: "1"
+	date: "2015-05-11 10:03:02 GMT (Monday 11th May 2015)"
+	revision: "2"
 
 class
 	EL_SEARCH_ENGINE [G -> EL_WORD_SEARCHABLE]
@@ -40,7 +40,10 @@ feature -- Basic operations
 			if search_term_parser.is_valid then
 				criteria := search_term_parser.criteria
 				from l_list.start until l_list.after loop
-					if criteria.for_all (agent {EL_SEARCH_TERM}.meets_criteria (l_list.item)) then
+					if across criteria as criterion all
+							criterion.item.meets_criteria (l_list.item)
+						end
+					then
 						results.extend (l_list.item)
 					end
 					l_list.forth

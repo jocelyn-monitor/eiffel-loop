@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Summary description for {EL_WINDOW_DRAG}."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-05-16 11:53:34 GMT (Thursday 16th May 2013)"
-	revision: "2"
+	date: "2014-12-11 14:33:27 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 class
 	EL_WINDOW_DRAG

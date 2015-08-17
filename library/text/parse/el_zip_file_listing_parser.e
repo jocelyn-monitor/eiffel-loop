@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-05 13:18:13 GMT (Sunday 5th January 2014)"
-	revision: "2"
+	date: "2015-01-01 14:05:39 GMT (Thursday 1st January 2015)"
+	revision: "4"
 
 class
 	EL_ZIP_FILE_LISTING_PARSER
@@ -15,6 +15,7 @@ class
 inherit
 	EL_PARSER
 		rename
+			make_default as make,
 			new_pattern as archived_file_listing_pattern
 		end
 

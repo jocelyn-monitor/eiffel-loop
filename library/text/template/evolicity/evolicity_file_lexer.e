@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-04 10:06:05 GMT (Saturday 4th January 2014)"
-	revision: "2"
+	date: "2015-03-04 12:10:21 GMT (Wednesday 4th March 2015)"
+	revision: "3"
 
 class
 	EVOLICITY_FILE_LEXER
@@ -15,7 +15,7 @@ class
 inherit
 	EL_FILE_LEXER
 		redefine
-			make_parser
+			make_default
 		end
 
 	EL_EIFFEL_PATTERN_FACTORY
@@ -30,12 +30,12 @@ create
 
 feature {NONE} -- Initialization
 
-	make_parser
+	make_default
 			--
 		do
+			create leading_space_text
 			Precursor
 			set_unmatched_text_action (add_token_action (Free_text))
-			create leading_space_text
 		end
 
 feature {NONE} -- Patterns
@@ -119,8 +119,7 @@ feature {NONE} -- Patterns
 			--
 		do
 			Result := all_of (<<
-				start_of_line,
-				maybe_non_breaking_white_space 	|to| agent on_leading_white_space,
+				leading_white_space,
 				character_literal ('#'),
 				one_of (<<
 					string_literal ("end") 			|to| add_token_action (Keyword_end),
@@ -134,6 +133,13 @@ feature {NONE} -- Patterns
 				maybe_non_breaking_white_space,
 				end_of_line_character
 			>>)
+		end
+
+	leading_white_space: like all_of
+		-- Fixes bug where #evaluate with no leading space uses tab count of previous #evaluate
+		do
+			Result := all_of (<< start_of_line, maybe_non_breaking_white_space >> )
+			Result.set_action_on_match_begin (agent on_leading_white_space)
 		end
 
 	if_directive: EL_MATCH_ALL_IN_LIST_TP
@@ -178,7 +184,7 @@ feature {NONE} -- Patterns
 		do
 			Result := all_of_separated_by (maybe_non_breaking_white_space,
 
-			<<  string_literal ("evaluate") 	|to| agent on_evaluate (Keyword_evaluate, ?),
+			<< string_literal ("evaluate") 	|to| agent on_evaluate (Keyword_evaluate, ?),
 				character_literal ('('),
 				one_of (<<
 					template_name_by_class	   |to| add_token_action (Template_name_identifier),

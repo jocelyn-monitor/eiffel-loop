@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {BENCHMARK_STRINGS_APP}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-08-05 9:33:37 GMT (Monday 5th August 2013)"
-	revision: "4"
+	date: "2015-05-03 10:50:58 GMT (Sunday 3rd May 2015)"
+	revision: "6"
 
 class
 	BENCHMARK_STRINGS_APP
@@ -24,7 +24,7 @@ inherit
 
 	EL_MODULE_STRING
 
-	EL_MODULE_TYPING
+	EL_MODULE_EIFFEL
 
 	EL_SHARED_CODEC
 
@@ -71,11 +71,11 @@ feature -- Basic operations
 
 			transpose_results (2, test_type, results)
 
-			set_codec (create {EL_ISO_8859_1_CODEC}.make)
+			set_system_codec (create {EL_ISO_8859_1_CODEC}.make)
 			create {EL_ASTRING_TESTS} test_type.make (string_list)
 			transpose_results (3, test_type, results)
 
-			set_codec (create {EL_ISO_8859_15_CODEC}.make)
+			set_system_codec (create {EL_ISO_8859_15_CODEC}.make)
 			create {EL_ASTRING_TESTS} test_type.make (string_list)
 			transpose_results (4, test_type, results)
 
@@ -84,7 +84,7 @@ feature -- Basic operations
 
 			file_name := "string-types-test-results.v$V.csv"
 			file_name.replace_substring_all ("$V", run_number.out)
-			create csv_file.make_open_write ((output_dir + file_name).unicode)
+			create csv_file.make_open_write (output_dir + file_name)
 			from row := 1 until row > results.height loop
 				from column := 1 until column > results.width loop
 					if column > 1 then
@@ -164,13 +164,13 @@ feature {NONE} -- Constants
 			--
 		do
 			Result := <<
-				[{BENCHMARK_STRINGS_APP}, "*"],
-				[{EL_TEST_ROUTINES}, "*"],
-				[{EL_SPREAD_SHEET}, "*"],
+				[{BENCHMARK_STRINGS_APP}, All_routines],
+				[{EL_TEST_ROUTINES}, All_routines],
+				[{EL_SPREAD_SHEET}, All_routines],
 
-				[{STRING_32_TESTS}, "*"],
-				[{EL_ASTRING_TESTS}, "*"],
-				[{UC_UTF8_STRING_TESTS}, "*"]
+				[{STRING_32_TESTS}, All_routines],
+				[{EL_ASTRING_TESTS}, All_routines],
+				[{UC_UTF8_STRING_TESTS}, All_routines]
 			>>
 		end
 

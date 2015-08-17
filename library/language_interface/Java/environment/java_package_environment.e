@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {JAVA_PACKAGE_ENVIRONMENT}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-04 10:16:36 GMT (Saturday 4th January 2014)"
-	revision: "4"
+	date: "2015-03-11 14:14:24 GMT (Wednesday 11th March 2015)"
+	revision: "6"
 
 class
 	JAVA_PACKAGE_ENVIRONMENT
@@ -39,7 +39,7 @@ feature {NONE} -- Initialization
 	make
 			--
 		do
-			make_platform
+			make_default
 			create class_path_list.make
 			class_path_list.compare_objects
 

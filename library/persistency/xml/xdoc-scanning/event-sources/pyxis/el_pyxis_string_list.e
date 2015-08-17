@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_PYXIS_STRING_LIST}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-10-25 9:37:36 GMT (Friday 25th October 2013)"
-	revision: "3"
+	date: "2015-03-11 14:04:48 GMT (Wednesday 11th March 2015)"
+	revision: "5"
 
 deferred class
 	EL_PYXIS_STRING_LIST
@@ -20,7 +20,7 @@ inherit
 
 feature -- Element change
 
-	extend (str: EL_ASTRING)
+	extend (str: ASTRING)
 		deferred
 		end
 

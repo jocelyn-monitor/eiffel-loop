@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-24 19:42:15 GMT (Monday 24th February 2014)"
-	revision: "4"
+	date: "2014-12-11 14:34:44 GMT (Thursday 11th December 2014)"
+	revision: "6"
 
 class
 	APPLICATION_ROOT
@@ -32,7 +32,7 @@ feature {NONE} -- Implementation
 				{CHARACTER_STATE_MACHINE_TEST_APP},
 				{COMPRESSION_TEST_APP},
 
-				{EIFFEL_EXPERIMENTS_APP},
+				{EXPERIMENTS_APP},
 				{ENCRYPTION_TEST_APP},
 				{EVOLICITY_TEST_APP},
 
@@ -49,12 +49,13 @@ feature {NONE} -- Implementation
 				{XML_TO_EIFFEL_OBJECT_BUILDER_TEST_APP},
 
 				-- Manual tests
-				{CD_CATALOG_APP},
 				{CLASS_TEST_APP},
 
 				{EL_EYED3_TAG_TEST_APP},
 
 				{TEST_SETS_APP},
+				{TEST_SIMPLE_CLIENT},
+				{TEST_SIMPLE_SERVER},
 				{TEST_VTD_XML_APP}
 			>>
 		end

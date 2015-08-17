@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		Root builder context that changes the type of the target object to build according to a processing instruction
 		at the start of the XML. The example below will build an instance of class SMIL_PRESENTATION.
@@ -15,8 +15,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-08-02 12:17:10 GMT (Friday 2nd August 2013)"
-	revision: "3"
+	date: "2015-05-03 10:50:59 GMT (Sunday 3rd May 2015)"
+	revision: "5"
 
 class
 	EL_EIF_OBJ_FACTORY_ROOT_BUILDER_CONTEXT
@@ -32,7 +32,7 @@ inherit
 			{NONE} all
 		end
 
-	EL_MODULE_TYPING
+	EL_MODULE_EIFFEL
 		export
 			{NONE} all
 		end

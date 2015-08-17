@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Desktop item for launching application"
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-12-06 14:01:01 GMT (Friday 6th December 2013)"
-	revision: "4"
+	date: "2015-03-11 13:54:27 GMT (Wednesday 11th March 2015)"
+	revision: "5"
 
 class
 	EL_DESKTOP_LAUNCHER
@@ -44,13 +44,13 @@ feature -- Element change
 			--
 		do
 			command_args := a_command_args
-			String.subst_all_characters (command_args, '%N', ' ')
+			command_args.replace_character ('%N', ' ')
 		end
 
 feature -- Access
 
-	command: EL_ASTRING
+	command: ASTRING
 
-	command_args: EL_ASTRING
+	command_args: ASTRING
 
 end

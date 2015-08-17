@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_UNDERBIT_ID3_TAG_CONSTANTS}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-01 13:40:03 GMT (Friday 1st November 2013)"
-	revision: "2"
+	date: "2015-01-16 12:26:27 GMT (Friday 16th January 2015)"
+	revision: "4"
 
 class
 	EL_UNDERBIT_ID3_TAG_CONSTANTS
@@ -169,7 +169,8 @@ feature {NONE} -- Constants
 			--
 		once
 			Result := <<
-				Field_type_list_string, Field_type_string, Field_type_full_string, Field_type_latin1, Field_type_full_latin1
+				Field_type_list_string, Field_type_string, Field_type_full_string, Field_type_frame_id,
+				Field_type_latin1, Field_type_full_latin1
 			>>
 		end
 

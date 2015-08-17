@@ -1,16 +1,16 @@
-note
+﻿note
 	description: "[
 		Visit all substrings in a string. 'interval' contains indices of each substring.
 		EL_OCCURRENCE_SUBSTRINGS
 	]"
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-07-28 10:24:30 GMT (Sunday 28th July 2013)"
-	revision: "3"
+	date: "2015-03-11 13:54:30 GMT (Wednesday 11th March 2015)"
+	revision: "4"
 
 class
 	EL_OCCURRENCE_SUBSTRINGS
@@ -26,7 +26,7 @@ create
 
 feature {NONE} -- Initialization
 
-	make (a_string, a_search_string: EL_ASTRING)
+	make (a_string, a_search_string: ASTRING)
 			--
 		do
 			make_substrings (a_string)
@@ -82,7 +82,7 @@ feature -- Status query
 
 feature {NONE} -- Implementation
 
-	search_string: EL_ASTRING
+	search_string: ASTRING
 
 	finish
 			-- Move to last position.

@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {STORABLE_STRING}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-04 9:59:56 GMT (Saturday 4th January 2014)"
-	revision: "3"
+	date: "2015-05-12 7:41:57 GMT (Tuesday 12th May 2015)"
+	revision: "5"
 
 class
 	STORABLE_STRING
@@ -15,9 +15,14 @@ class
 inherit
 	STRING
 
-	EL_MEMORY_READ_WRITEABLE
+	EL_STORABLE
+		rename
+			make_default as make_empty,
+			read_version as read_default_version
 		undefine
 			copy, is_equal, out
+		redefine
+			read_default, write
 		end
 
 create

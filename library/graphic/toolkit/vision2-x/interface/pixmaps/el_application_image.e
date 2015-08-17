@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-12 14:40:26 GMT (Sunday 12th January 2014)"
-	revision: "3"
+	date: "2014-12-11 14:33:27 GMT (Thursday 11th December 2014)"
+	revision: "5"
 
 class
 	EL_APPLICATION_IMAGE

@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_MANAGED_CONTAINABLE}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-06 19:06:29 GMT (Monday 6th January 2014)"
-	revision: "2"
+	date: "2014-12-11 14:33:27 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 class
 	EL_MANAGED_CONTAINABLE [W -> EV_CONTAINABLE create default_create end]

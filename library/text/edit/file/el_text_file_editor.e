@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "${description}"
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-04 10:12:00 GMT (Saturday 4th January 2014)"
-	revision: "5"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "7"
 
 deferred class
 	EL_TEXT_FILE_EDITOR
@@ -31,10 +31,10 @@ feature -- Element change
 
 feature {NONE} -- Implementation
 
-	new_output: IO_MEDIUM
+	new_output: PLAIN_TEXT_FILE
 			--
 		do
-			create {PLAIN_TEXT_FILE} Result.make_open_write (output_file_path.unicode)
+			create Result.make_open_write (output_file_path)
 		end
 
 	output_file_path: EL_FILE_PATH

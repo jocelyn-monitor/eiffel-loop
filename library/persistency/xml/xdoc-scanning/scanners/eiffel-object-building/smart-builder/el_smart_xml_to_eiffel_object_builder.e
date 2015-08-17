@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		Detects the desired target type from XML processing instruction 'create {G}' 
 		and sets the type of target_object to G where G is a type conforming to EL_BUILDABLE_FROM_XML. 
@@ -10,8 +10,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-08-02 12:12:27 GMT (Friday 2nd August 2013)"
-	revision: "2"
+	date: "2015-01-01 13:53:19 GMT (Thursday 1st January 2015)"
+	revision: "4"
 
 class
 	EL_SMART_XML_TO_EIFFEL_OBJECT_BUILDER
@@ -19,7 +19,7 @@ class
 inherit
 	EL_BUILDABLE_FROM_XML
 		redefine
-			make, root_builder_context, build_from_stream, build_from_string
+			root_builder_context, build_from_stream, build_from_string
 		end
 
 create
@@ -30,15 +30,9 @@ feature {NONE} -- Initialization
 	make
 			--
 		do
-			Precursor
+			make_default
 			create root_builder_context.make (Root_node_name, Current)
 			target := Current
-		end
-
-	make_default
-		require else
-			never_called: False
-		do
 		end
 
 feature -- Access

@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		Perform calculations on matrix with procedure specified in processing instruction
 
@@ -30,8 +30,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-08-02 12:13:59 GMT (Friday 2nd August 2013)"
-	revision: "2"
+	date: "2015-01-01 16:21:54 GMT (Thursday 1st January 2015)"
+	revision: "4"
 
 class
 	MATRIX_CALCULATOR
@@ -42,22 +42,18 @@ inherit
 			make as make_array,
 			last as row,
 			count as row_count
-		undefine
-			default_create
 		end
 
 	EL_BUILDABLE_FROM_XML
-		rename
-			make_default as make
 		undefine
 			copy, is_equal
 		redefine
-			default_create, building_action_table, PI_building_action_table, on_context_exit
+			make_default, building_action_table, PI_building_action_table, on_context_exit
 		end
 
 	EL_MODULE_LOG
 		undefine
-			default_create, copy, is_equal
+			copy, is_equal
 		end
 
 create
@@ -65,9 +61,10 @@ create
 
 feature {NONE} -- Initialization
 
-	default_create
+	make_default
 			--
 		do
+			Precursor
 			make_array (10)
 			create vector_result.make (1, 0)
 			create row_sum.make (1, 0)

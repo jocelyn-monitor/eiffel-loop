@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		Bioinformatic data demonstrating building from recursive XML
 		
@@ -45,8 +45,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-08-02 12:13:21 GMT (Friday 2nd August 2013)"
-	revision: "2"
+	date: "2015-01-01 15:24:58 GMT (Thursday 1st January 2015)"
+	revision: "4"
 
 class
 	BIOINFORMATIC_COMMANDS
@@ -56,22 +56,20 @@ inherit
 		rename
 			make_default as make
 		redefine
-			default_create, building_action_table
+			make, building_action_table
 		end
 
 	EL_MODULE_LOG
-		undefine
-			default_create
-		end
 
 create
 	make_from_file, make_from_string, make
 
 feature {NONE} -- Initialization
 
-	default_create
+	make
 			--
 		do
+			Precursor
 			create commands.make
 		end
 

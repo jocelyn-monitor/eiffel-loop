@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_C_DATA_STRING}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-24 18:56:16 GMT (Monday 24th February 2014)"
-	revision: "4"
+	date: "2015-03-11 13:54:28 GMT (Wednesday 11th March 2015)"
+	revision: "6"
 
 deferred class
 	EL_C_STRING
@@ -223,7 +223,7 @@ feature -- Status query
 
 feature -- Conversion
 
-	as_string: EL_ASTRING
+	as_string: ASTRING
 			--
 		do
 			Result := as_string_32

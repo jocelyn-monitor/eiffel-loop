@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Summary description for {EIFFEL_CODE_HIGHLIGHTING_TEST_APP}."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-07-28 10:56:37 GMT (Sunday 28th July 2013)"
-	revision: "4"
+	date: "2014-12-11 14:34:36 GMT (Thursday 11th December 2014)"
+	revision: "6"
 
 class
 	EIFFEL_CODE_HIGHLIGHTING_TEST_APP
@@ -48,7 +48,7 @@ feature -- Tests
 			log.enter ("test_code_highlighting")
 			output_path := file_path.without_extension
 			output_path.add_extension ("e.html")
-			create html_file.make_open_write (output_path.unicode)
+			create html_file.make_open_write (output_path)
 			create transformer.make (html_file)
 			transformer.set_source_text_from_file (file_path)
 			transformer.transform

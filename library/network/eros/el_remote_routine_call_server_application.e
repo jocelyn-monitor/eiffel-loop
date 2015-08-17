@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Summary description for {EL_REMOTE_ROUTINE_CALL_SERVER_APPLICATION}."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-02-13 11:02:05 GMT (Wednesday 13th February 2013)"
-	revision: "2"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 deferred class
 	EL_REMOTE_ROUTINE_CALL_SERVER_APPLICATION

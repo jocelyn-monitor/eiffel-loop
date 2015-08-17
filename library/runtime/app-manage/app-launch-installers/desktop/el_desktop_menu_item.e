@@ -1,4 +1,4 @@
-note
+﻿note
 	description: ""
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-12-06 13:58:29 GMT (Friday 6th December 2013)"
-	revision: "3"
+	date: "2015-03-11 13:54:28 GMT (Wednesday 11th March 2015)"
+	revision: "4"
 
 class
 	EL_DESKTOP_MENU_ITEM
@@ -38,9 +38,9 @@ feature -- Access
 
 	icon_path: EL_FILE_PATH
 
-	name: EL_ASTRING
+	name: ASTRING
 
-	comment: EL_ASTRING
+	comment: ASTRING
 
 feature -- Status query
 

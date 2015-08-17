@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {TEST_STRING_32}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-08-05 8:25:15 GMT (Monday 5th August 2013)"
-	revision: "4"
+	date: "2015-05-03 10:50:08 GMT (Sunday 3rd May 2015)"
+	revision: "6"
 
 class
 	STRING_32_TESTS
@@ -20,7 +20,7 @@ create
 
 feature {NONE} -- Implementation
 
-	index_of_unicode (uc: CHARACTER_32; s: STRING_32): INTEGER
+	index_of (uc: CHARACTER_32; s: STRING_32): INTEGER
 		do
 			Result := s.index_of (uc, 1)
 		end
@@ -37,7 +37,7 @@ feature {NONE} -- Implementation
 
 	storage_bytes (s: STRING_32): INTEGER
 		do
-			Result := Typing.physical_size (s) + Typing.physical_size (s.area)
+			Result := Eiffel.physical_size (s) + Eiffel.physical_size (s.area)
 		end
 
 end

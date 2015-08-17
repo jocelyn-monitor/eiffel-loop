@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		Object that upgrades syntax of log filters 
 		FROM
@@ -28,17 +28,14 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-21 9:53:01 GMT (Friday 21st February 2014)"
-	revision: "2"
+	date: "2015-01-01 12:46:34 GMT (Thursday 1st January 2015)"
+	revision: "4"
 
 class
 	EIFFEL_LOG_FILTER_ARRAY_SOURCE_EDITOR
 
 inherit
 	EIFFEL_SOURCE_EDITING_PROCESSOR
-		redefine
-			make
-		end
 
 create
 	make
@@ -48,7 +45,7 @@ feature {NONE} -- Initialization
 	make
 			--
 		do
-			Precursor
+			make_default
 			create class_name.make_empty
 			create feature_names.make (10)
 		end

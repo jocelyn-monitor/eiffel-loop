@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-04 9:59:39 GMT (Saturday 4th January 2014)"
-	revision: "2"
+	date: "2015-01-01 14:21:24 GMT (Thursday 1st January 2015)"
+	revision: "4"
 
 class
 	WEB_FORM_TEXT
@@ -19,10 +19,8 @@ inherit
 		end
 
 	EVOLICITY_SERIALIZEABLE_TEXT_VALUE
-		rename
-			make as make_serializeable
 		undefine
-			new_getter_functions, make_serializeable
+			new_getter_functions, make_empty, make_default
 		end
 
 create

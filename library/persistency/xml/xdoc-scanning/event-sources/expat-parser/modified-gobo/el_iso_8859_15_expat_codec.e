@@ -1,19 +1,21 @@
-note
+﻿note
 	description: "Summary description for {EL_ISO_8859_15_EXPAT_CODEC}."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-07-26 19:54:34 GMT (Friday 26th July 2013)"
-	revision: "3"
+	date: "2015-07-03 9:31:33 GMT (Friday 3rd July 2015)"
+	revision: "5"
 
 class
 	EL_ISO_8859_15_EXPAT_CODEC
 
 inherit
 	EL_EXPAT_CODEC
+		rename
+			Empty_call_back_routines as call_back_routines
 		redefine
 			make
 		end

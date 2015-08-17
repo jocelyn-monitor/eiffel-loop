@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {ECF_TO_PECF_APP}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-20 17:41:21 GMT (Thursday 20th February 2014)"
-	revision: "3"
+	date: "2014-12-11 14:34:36 GMT (Thursday 11th December 2014)"
+	revision: "5"
 
 class
 	EIFFEL_ECF_TO_PECF_APP

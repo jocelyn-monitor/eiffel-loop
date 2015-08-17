@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_ID3_ALBUM_PICTURE_FRAME}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-12-08 17:45:54 GMT (Sunday 8th December 2013)"
-	revision: "2"
+	date: "2015-03-11 14:03:28 GMT (Wednesday 11th March 2015)"
+	revision: "4"
 
 deferred class
 	EL_ALBUM_PICTURE_ID3_FRAME
@@ -46,7 +46,7 @@ feature -- Access
 			Result := field_list.i_th (image_index)
 		end
 
-	description: EL_ASTRING
+	description: ASTRING
 		do
 			Result := field_list.i_th (description_index).string
 		end
@@ -58,7 +58,7 @@ feature -- Access
 
 feature -- Element change
 
-	set_description (str: EL_ASTRING)
+	set_description (str: ASTRING)
 			--
 		do
 			field_list.i_th (description_index).set_string (str)

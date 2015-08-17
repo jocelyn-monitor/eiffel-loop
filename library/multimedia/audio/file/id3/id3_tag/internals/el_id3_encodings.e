@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_ID3_TAG_CONSTANTS}."
 
 	author: "Finnian Reilly"
@@ -6,15 +6,11 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-01 13:44:16 GMT (Friday 1st November 2013)"
-	revision: "2"
+	date: "2015-01-10 9:26:20 GMT (Saturday 10th January 2015)"
+	revision: "4"
 
 class
 	EL_ID3_ENCODINGS
-
-feature -- ac
-
-	Empty_string: STRING = ""
 
 feature -- Encoding types
 

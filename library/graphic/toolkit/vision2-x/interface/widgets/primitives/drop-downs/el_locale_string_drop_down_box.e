@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_LOCALE_DROP_DOWN_LIST_BOX}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-11 11:21:07 GMT (Saturday 11th January 2014)"
-	revision: "5"
+	date: "2015-03-11 13:54:28 GMT (Wednesday 11th March 2015)"
+	revision: "7"
 
 class
 	EL_LOCALE_STRING_DROP_DOWN_BOX
@@ -30,9 +30,9 @@ create
 
 feature {NONE} -- Implementation
 
-	translation (a_string: EL_ASTRING): EL_ASTRING
+	translation (string: ASTRING): ASTRING
 		do
-			Result := Locale * a_string
+			Result := Locale * string
 		end
 
 end

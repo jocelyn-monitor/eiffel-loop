@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		Level 3 page navigation contents link containing hideable sub-level links
 	]"
@@ -8,8 +8,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-03-26 9:08:37 GMT (Wednesday 26th March 2014)"
-	revision: "3"
+	date: "2014-12-11 14:33:27 GMT (Thursday 11th December 2014)"
+	revision: "5"
 
 class
 	EL_HTML_TEXT_HYPERLINK_AREA

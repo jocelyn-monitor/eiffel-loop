@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Summary description for {LIST_PARAMETER}."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2012 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2012-12-16 11:34:22 GMT (Sunday 16th December 2012)"
-	revision: "1"
+	date: "2015-01-01 15:29:56 GMT (Thursday 1st January 2015)"
+	revision: "3"
 
 deferred class
 	LIST_PARAMETER [G]
@@ -19,27 +19,25 @@ inherit
 		undefine
 			copy, is_equal
 		redefine
-			default_create, display_all_items
+			make, display_all_items
 		end
 
 	ARRAYED_LIST [G]
 		rename
 			make as make_list
-		undefine
-			default_create
 		end
 
 	EL_MODULE_LOG
 		undefine
-			default_create, copy, is_equal
+			copy, is_equal
 		end
 
 feature {NONE} -- Initialization
 
-	default_create
+	make
 			--
 		do
-			Precursor {PARAMETER}
+			Precursor
 			make_list (50)
 		end
 

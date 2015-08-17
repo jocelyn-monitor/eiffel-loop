@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-20 16:39:50 GMT (Wednesday 20th November 2013)"
-	revision: "4"
+	date: "2015-03-11 13:54:26 GMT (Wednesday 11th March 2015)"
+	revision: "5"
 
 class
 	EVOLICITY_FREE_TEXT_DIRECTIVE
@@ -27,18 +27,14 @@ feature {NONE} -- Initialization
 
 feature -- Access
 
-	text: EL_ASTRING
+	text: ASTRING
 
 feature -- Basic operations
 
-	execute (context: EVOLICITY_CONTEXT; output: IO_MEDIUM; utf8_encoded: BOOLEAN)
+	execute (context: EVOLICITY_CONTEXT; output: EL_OUTPUT_MEDIUM)
 			--
 		do
-			if utf8_encoded then
-				output.put_string (text.to_utf8)
-			else
-				output.put_string (text)
-			end
+			output.put_string (text)
 		end
 
 end -- class EVOLICITY_FREE_TEXT_DIRECTIVE

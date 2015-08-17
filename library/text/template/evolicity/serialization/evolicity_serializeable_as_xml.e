@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-04 9:54:45 GMT (Saturday 4th January 2014)"
-	revision: "4"
+	date: "2015-03-11 13:54:30 GMT (Wednesday 11th March 2015)"
+	revision: "5"
 
 deferred class
 	EVOLICITY_SERIALIZEABLE_AS_XML
@@ -15,12 +15,13 @@ deferred class
 inherit
 	EVOLICITY_SERIALIZEABLE
 		rename
-			serialized_text as to_xml,
+			as_text as to_xml,
+			as_utf_8_text as to_utf_8_xml,
 			serialize_to_file as save_as_xml
 		export
 			{ANY} Template
 		redefine
-			new_getter_functions, stored_successfully, utf8_encoded
+			new_getter_functions, stored_successfully
 		end
 
 	EL_SERIALIZEABLE_AS_XML
@@ -36,18 +37,6 @@ feature -- Access
 		do
 			pos_last_left_bracket := Template.last_index_of ('<', Template.count)
 			Result := Template.substring (pos_last_left_bracket + 2, Template.count - 1).to_string_8
-		end
-
-	encoding_name: STRING
-		do
-			Result := Default_encoding_name
-		end
-
-feature -- Status query
-
-	utf8_encoded: BOOLEAN
-		do
-			Result := encoding_name.same_string ("UTF-8")
 		end
 
 feature {NONE} -- Implementation
@@ -69,24 +58,13 @@ feature {NONE} -- Implementation
 		do
 			Result := Precursor
 			Result [Variable_to_xml] :=  agent to_xml
-			Result [Variable_encoding_name] := agent encoding_name
 		end
 
 feature {NONE} -- Constants
 
-	Variable_to_xml: EL_ASTRING
+	Variable_to_xml: ASTRING
 		once
 			Result := "to_xml"
-		end
-
-	Variable_encoding_name: EL_ASTRING
-		once
-			Result := "encoding_name"
-		end
-
-	Default_encoding_name: STRING
-		once
-			Result := "ISO-8859-1"
 		end
 
 end

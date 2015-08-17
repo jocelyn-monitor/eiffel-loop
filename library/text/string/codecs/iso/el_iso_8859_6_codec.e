@@ -6,8 +6,8 @@
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-08-03 10:25:48 GMT (Saturday 3rd August 2013)"
-	revision: "3"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 class
 	EL_ISO_8859_6_CODEC
@@ -103,30 +103,40 @@ feature -- Conversion
 			Result := code + offset
 		end
 
-	unicode_case_change_substitute (c: CHARACTER): CHARACTER_32
+	unicode_case_change_substitute (code: NATURAL): CHARACTER_32
 			-- Returns Unicode case change character if c does not have a latin case change
 			-- or else the Null character
 		do
-			inspect c
-				when 'µ' then
+			inspect code
+				-- µ -> Μ
+				when 181 then
 					Result := 'Μ'
-				when 'À' then
+				-- À -> à
+				when 192 then
 					Result := 'à'
-				when 'ó' then
+				-- ó -> Ó
+				when 243 then
 					Result := 'Ó'
-				when 'ô' then
+				-- ô -> Ô
+				when 244 then
 					Result := 'Ô'
-				when 'õ' then
+				-- õ -> Õ
+				when 245 then
 					Result := 'Õ'
-				when 'ö' then
+				-- ö -> Ö
+				when 246 then
 					Result := 'Ö'
-				when 'ø' then
+				-- ø -> Ø
+				when 248 then
 					Result := 'Ø'
-				when 'ù' then
+				-- ù -> Ù
+				when 249 then
 					Result := 'Ù'
-				when 'ú' then
+				-- ú -> Ú
+				when 250 then
 					Result := 'Ú'
-				when 'ÿ' then
+				-- ÿ -> Ÿ
+				when 255 then
 					Result := 'Ÿ'
 			else end
 		end

@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_STRING_DROP_DOWN_BOX}."
 
 	author: "Finnian Reilly"
@@ -6,14 +6,14 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-12 11:36:56 GMT (Sunday 12th January 2014)"
-	revision: "5"
+	date: "2015-03-11 13:54:26 GMT (Wednesday 11th March 2015)"
+	revision: "7"
 
 class
 	EL_ASTRING_DROP_DOWN_BOX
 
 inherit
-	EL_DROP_DOWN_BOX [EL_ASTRING]
+	EL_DROP_DOWN_BOX [ASTRING]
 		rename
 			selected_text as selected_text_32,
 			displayed_value as displayed_text,
@@ -29,7 +29,7 @@ create
 
 feature {NONE} -- Implementation
 
-	displayed_text (string: EL_ASTRING): EL_ASTRING
+	displayed_text (string: ASTRING): ASTRING
 		do
 			Result := string
 		end

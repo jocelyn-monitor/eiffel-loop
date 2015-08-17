@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		Thread consumer for audio clips taken from a (thread product) work queue.
 		Saves the clips in the temp directory with unique file names and puts the saved file path
@@ -7,12 +7,12 @@ note
 	]"
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-06-18 8:35:00 GMT (Tuesday 18th June 2013)"
-	revision: "2"
+	date: "2014-12-11 14:34:36 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 class
 	EL_AUDIO_CLIP_SAVER

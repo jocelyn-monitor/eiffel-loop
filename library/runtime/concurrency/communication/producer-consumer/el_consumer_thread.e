@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Consumes the products of a product queue fed by another thread"
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-03-13 17:46:54 GMT (Wednesday 13th March 2013)"
-	revision: "2"
+	date: "2015-04-23 10:28:40 GMT (Thursday 23rd April 2015)"
+	revision: "3"
 
 deferred class
 	EL_CONSUMER_THREAD [P]
@@ -15,7 +15,7 @@ deferred class
 inherit
 	EL_CONSUMER [P]
 		undefine
-			is_equal, copy, stop, default_create
+			make_default, is_equal, copy, stop
 		end
 
 	EL_CONTINUOUS_ACTION_THREAD
@@ -30,7 +30,7 @@ feature {NONE} -- Initialization
 	make
 			--
 		do
-			default_create
+			make_default
 			create product_count.make (0)
 		end
 

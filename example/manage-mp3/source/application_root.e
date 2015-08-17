@@ -6,8 +6,8 @@
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-11 11:31:14 GMT (Monday 11th November 2013)"
-	revision: "4"
+	date: "2015-03-04 11:37:23 GMT (Wednesday 4th March 2015)"
+	revision: "6"
 
 class
 	APPLICATION_ROOT
@@ -24,36 +24,17 @@ feature {NONE} -- Implementation
 			--
 		once
 			Result := <<
-				{MEDIA_SYNC_APP},
+				{RHYTHMBOX_MUSIC_MANAGER_APP},
 
-				{RBOX_ADD_ALBUM_PICTURES_APP},
-				{RBOX_ARTIST_AND_TITLE_NORMALIZATION_APP},
-				{RBOX_COLLATION_BY_GENRE_AND_ARTIST_APP},
-				{RBOX_REPLACE_CORTINA_SET_APP},
-				{RBOX_DATABASE_EXPORT_APP},
-
-				{RBOX_REPLACE_DELETED_SONGS_APP},
-
-				{RBOX_HTML_PLAYLIST_APP},
-				{RBOX_ID3_EDIT_APP},
 				{RBOX_IMPORT_NEW_MP3_APP},
-
-				{RBOX_PLAYLIST_EXPORT_APP},
 				{RBOX_PLAYLIST_IMPORT_APP},
 				{RBOX_RESTORE_PLAYLISTS_APP},
-				{RBOX_VIDEO_IMPORT_APP},
 
-				{ID3_EDITOR_APP}
+				{ID3_EDITOR_APP},
+				{MP3_FILE_COLLATOR_APP}
 			>>
 		end
 
-note
-	to_do: "[
-		* Add codec support to PLAIN_TEXT_FILE. Solve reading OS output file paths from file by using this
-		
-		Nov 11, 2013
-		
-		* Some song integer fields needed for publish playlists have been subsumed into integer list
-		
-	]"
+	notes: PROJECT_NOTES
+
 end

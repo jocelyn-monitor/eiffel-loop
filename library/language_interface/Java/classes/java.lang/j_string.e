@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2012 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2012-12-18 10:21:15 GMT (Tuesday 18th December 2012)"
-	revision: "1"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "3"
 
 class
 	J_STRING

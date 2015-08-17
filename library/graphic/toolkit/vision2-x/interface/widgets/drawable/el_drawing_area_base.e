@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Base class for drawable objects"
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-03-12 15:10:45 GMT (Tuesday 12th March 2013)"
-	revision: "2"
+	date: "2014-12-11 14:33:27 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 deferred class
 	EL_DRAWING_AREA_BASE
@@ -42,6 +42,14 @@ feature -- Basic operations
 		do
 			expose_actions.block
 			resize_actions.extend (agent on_resize)
+		end
+
+	simulate_pointer_motion
+		local
+			position: EV_COORDINATE
+		do
+			position := pointer_position
+			pointer_motion_actions.call ([position.x, position.y, 0.0, 0.0, 0.0, screen_x + position.x, screen_y + position.y])
 		end
 
 feature {NONE} -- Event handlers

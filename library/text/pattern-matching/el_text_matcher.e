@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_STRING_MATCHER}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-22 11:31:22 GMT (Saturday 22nd February 2014)"
-	revision: "2"
+	date: "2015-03-11 13:57:31 GMT (Wednesday 11th March 2015)"
+	revision: "4"
 
 class
 	EL_TEXT_MATCHER
@@ -16,8 +16,6 @@ inherit
 	EL_PARSER
 		export
 			{NONE} all
-		redefine
-			make
 		end
 
 	EL_TEXTUAL_PATTERN_FACTORY
@@ -33,7 +31,7 @@ feature {NONE} -- Initialization
 	make
 			--
 		do
-			Precursor
+			make_default
 			create {EL_MATCH_BEGINNING_OF_LINE_TP} pattern
 		end
 
@@ -46,7 +44,7 @@ feature -- Element change
 
 feature -- Basic operations
 
-	is_match (a_string: EL_ASTRING): BOOLEAN
+	is_match (a_string: ASTRING): BOOLEAN
 			--
 		do
 			set_source_text (a_string)
@@ -54,13 +52,13 @@ feature -- Basic operations
 			Result := full_match_succeeded
 		end
 
-	contains_match (a_string: EL_ASTRING): BOOLEAN
+	contains_match (a_string: ASTRING): BOOLEAN
 			--
 		do
 			Result := occurrences (a_string) > 1
 		end
 
-	occurrences (a_string: EL_ASTRING): INTEGER
+	occurrences (a_string: ASTRING): INTEGER
 			--
 		do
 			set_source_text (a_string)
@@ -68,16 +66,13 @@ feature -- Basic operations
 			Result := count_match_successes
 		end
 
-	deleted (a_string: EL_ASTRING): EL_ASTRING
+	deleted (a_string: ASTRING): ASTRING
 			-- a_string with all occurrences of pattern deleted
 		do
 			create Result.make (a_string.count)
-			unmatched_text_action := agent (unmatched_text: EL_STRING_VIEW; a_result: EL_ASTRING)
-				local
-					s: EL_ASTRING
+			unmatched_text_action := agent (unmatched_text: EL_STRING_VIEW; a_result: ASTRING)
 				do
-					s := unmatched_text
-					a_result.append_string (s)
+					a_result.append (unmatched_text)
 				end (?, Result)
 
 			set_source_text (a_string)

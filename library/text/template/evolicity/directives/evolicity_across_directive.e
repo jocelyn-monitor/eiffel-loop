@@ -1,15 +1,15 @@
-note
+﻿note
 	description: "[
 		across loop duplicating Eiffel syntax
 	]"
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-07-25 23:13:14 GMT (Thursday 25th July 2013)"
-	revision: "3"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 class
 	EVOLICITY_ACROSS_DIRECTIVE

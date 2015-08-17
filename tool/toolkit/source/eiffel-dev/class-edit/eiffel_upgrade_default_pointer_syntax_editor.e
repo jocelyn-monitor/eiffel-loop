@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		Change syntax of default_pointers references: 
 			ptr /= default_pointer TO is_attached (ptr)
@@ -10,8 +10,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-21 9:52:07 GMT (Friday 21st February 2014)"
-	revision: "2"
+	date: "2015-03-11 13:47:28 GMT (Wednesday 11th March 2015)"
+	revision: "4"
 
 class
 	EIFFEL_UPGRADE_DEFAULT_POINTER_SYNTAX_EDITOR
@@ -19,9 +19,6 @@ class
 
 inherit
 	EIFFEL_SOURCE_EDITING_PROCESSOR
-		redefine
-			make
-		end
 
 create
 	make
@@ -31,7 +28,7 @@ feature {NONE} -- Initialization
 	make
 			--
 		do
-			Precursor
+			make_default
 			create variable_name.make_empty
 		end
 
@@ -82,16 +79,16 @@ feature {NONE} -- Parsing actions
 			--
 		do
 			if is_equal_comparison then
-				put_string (Template_unattached.substituted (<< variable_name >>))
+				put_string (Template_unattached #$ [variable_name])
 			else
-				put_string (Template_attached.substituted (<< variable_name >>))
+				put_string (Template_attached #$ [variable_name])
 			end
 		end
 
 	on_comparison_operator (text: EL_STRING_VIEW)
 			--
 		do
-			is_equal_comparison := text.view.item (1) = '='
+			is_equal_comparison := text.to_string_8.item (1) = '='
 		end
 
 feature {NONE} -- Implementation
@@ -100,13 +97,13 @@ feature {NONE} -- Implementation
 
 	is_equal_comparison: BOOLEAN
 
-	Template_attached: EL_TEMPLATE_STRING
+	Template_attached: ASTRING
 		do
-			Result := String.template ("is_attached ($S)")
+			Result := "is_attached ($S)"
 		end
 
-	Template_unattached: EL_TEMPLATE_STRING
+	Template_unattached: ASTRING
 		do
-			Result := String.template ("not is_attached ($S)")
+			Result := "not is_attached ($S)"
 		end
 end

@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_TEXT_EDITOR}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-04 10:11:00 GMT (Saturday 4th January 2014)"
-	revision: "3"
+	date: "2015-03-11 13:57:26 GMT (Wednesday 11th March 2015)"
+	revision: "5"
 
 deferred class
 	EL_TEXT_EDITOR
@@ -16,9 +16,9 @@ inherit
 	EL_FILE_PARSER
 		rename
 			new_pattern as delimiting_pattern,
-			consume_events as write_new_text
+			consume_events as write_events_text
 		redefine
-			make
+			make_default
 		end
 
 	EL_TEXTUAL_PATTERN_FACTORY
@@ -27,7 +27,7 @@ inherit
 
 feature {NONE} -- Initialization
 
-	make
+	make_default
 			--
 		do
 			Precursor
@@ -42,13 +42,21 @@ feature -- Basic operations
 		do
 			find_all
 			if at_least_one_match_found then
-				output := new_output
 				write_new_text
-				close
 			end
 		end
 
 feature {NONE} -- Implementation
+
+	write_new_text
+		do
+			output := new_output
+			if is_utf8_encoded then
+				output.put_string (UTF.utf_8_bom_to_string_8)
+			end
+			write_events_text
+			close
+		end
 
 	put_new_line
 			--
@@ -61,10 +69,14 @@ feature {NONE} -- Implementation
 	put_string (str: READABLE_STRING_GENERAL)
 			-- Write `s' at current position.
 		do
-			output.put_string (String.as_utf8 (str))
+			if is_utf8_encoded then
+				output.put_string (String.as_utf8 (str))
+			else
+				output.put_string (str.to_string_8)
+			end
 		end
 
-	new_output: like output
+	new_output: IO_MEDIUM
 			--
 		deferred
 		end
@@ -81,7 +93,7 @@ feature {NONE} -- Implementation
 			put_string (text)
 		end
 
-	replace (text: EL_STRING_VIEW; new_text: EL_ASTRING)
+	replace (text: EL_STRING_VIEW; new_text: ASTRING)
 			--
 		do
 			put_string (new_text)
@@ -92,6 +104,6 @@ feature {NONE} -- Implementation
 		do
 		end
 
-	output: IO_MEDIUM
+	output: like new_output
 
 end

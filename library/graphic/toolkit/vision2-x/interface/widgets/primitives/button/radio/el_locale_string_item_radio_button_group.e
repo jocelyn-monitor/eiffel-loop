@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_LOCALE_STRING_ITEM_RADIO_BUTTON_GROUP}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-12-01 8:56:16 GMT (Sunday 1st December 2013)"
-	revision: "3"
+	date: "2014-12-11 14:33:27 GMT (Thursday 11th December 2014)"
+	revision: "5"
 
 class
 	EL_LOCALE_STRING_ITEM_RADIO_BUTTON_GROUP

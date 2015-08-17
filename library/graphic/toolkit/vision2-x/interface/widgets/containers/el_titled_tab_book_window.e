@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_TITLED_TAB_BOOK_WINDOW}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-03-17 14:40:36 GMT (Monday 17th March 2014)"
-	revision: "4"
+	date: "2015-07-09 8:31:11 GMT (Thursday 9th July 2015)"
+	revision: "6"
 
 class
 	EL_TITLED_TAB_BOOK_WINDOW
@@ -31,10 +31,8 @@ feature {NONE} -- Initialization
 	make
 		do
 			Precursor
-			set_dimensions
-
 			create main_container
-			main_container.set_border_width (Screen.horizontal_pixels (Border_cms))
+			main_container.set_border_width (Screen.horizontal_pixels (Main_container_border_cms))
 			tab_book := new_tab_book
 			main_container.extend (tab_book)
 
@@ -47,10 +45,6 @@ feature -- Access
 
 feature {NONE} -- Implementation
 
-	set_dimensions
-		do
-		end
-
 	main_container: EV_VERTICAL_BOX
 		-- Main container (contains all widgets displayed in this window)
 
@@ -61,8 +55,11 @@ feature {NONE} -- Implementation
 
 feature {NONE} -- Constants
 
-	Border_cms: REAL
+	Main_container_border_cms: REAL
 		once
-			Result := 0.07
+			if not has_wide_theme_border then
+				Result := 0.07
+			end
 		end
+
 end

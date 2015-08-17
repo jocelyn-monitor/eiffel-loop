@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_TEXT}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-03-17 8:23:03 GMT (Monday 17th March 2014)"
-	revision: "2"
+	date: "2014-12-20 13:44:44 GMT (Saturday 20th December 2014)"
+	revision: "4"
 
 class
 	EL_TEXT
@@ -15,26 +15,18 @@ class
 inherit
 	EV_TEXT
 		redefine
-			initialize, paste
+			create_implementation, implementation, paste
 		end
 
 	EL_UNDOABLE_TEXT
-		rename
-			make as make_undoable
 		undefine
 			default_create, copy
+		redefine
+			implementation
 		end
 
 create
 	default_create
-
-feature {NONE} -- Initialization
-
-	initialize
-		do
-			Precursor
-			make_undoable
-		end
 
 feature -- Basic operations
 
@@ -51,4 +43,13 @@ feature -- Basic operations
 			end
 		end
 
+feature {EV_ANY, EV_ANY_I} -- Implementation
+
+	implementation: EL_TEXT_I
+
+	create_implementation
+			-- See `{EV_ANY}.create_implementation'.
+		do
+			create {EL_TEXT_IMP} implementation.make
+		end
 end

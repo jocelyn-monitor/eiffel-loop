@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		Simple xpath parser that can parse xpaths like the following:
 		
@@ -25,8 +25,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-04 10:05:27 GMT (Saturday 4th January 2014)"
-	revision: "2"
+	date: "2015-01-01 12:36:09 GMT (Thursday 1st January 2015)"
+	revision: "4"
 
 class
 	EL_XPATH_PARSER
@@ -34,6 +34,7 @@ class
 inherit
 	EL_FILE_PARSER
 		rename
+			make_default as make,
 			full_match_succeeded as is_attribute_selector_by_attribute_value
 		redefine
 			reset

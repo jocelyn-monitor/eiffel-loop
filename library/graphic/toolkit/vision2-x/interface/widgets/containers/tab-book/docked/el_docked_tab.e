@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_VERTICAL_TAB_BOX}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-03-18 13:57:05 GMT (Tuesday 18th March 2014)"
-	revision: "5"
+	date: "2015-03-11 13:54:26 GMT (Wednesday 11th March 2015)"
+	revision: "7"
 
 deferred class
 	EL_DOCKED_TAB
@@ -20,33 +20,30 @@ feature {NONE} -- Initialization
 		do
 			create content_border_box.make (Border_width_cms, 0.0)
 			content_border_box.extend (create {EV_CELL})
-			create properties.make_with_widget (content_border_box, unique_title)
-			if is_closeable then
-				properties.close_request_actions.extend (agent close)
-			end
-			properties.show_actions.extend (agent on_show)
+
+			create properties.make_with_tab (Current)
 			properties.set_type ({SD_ENUMERATION}.editor)
 		end
 
 feature -- Access
 
-	unique_title: STRING_32
+	unique_title: ASTRING
 		deferred
 		end
 
-	title: STRING_32
+	title: ASTRING
 		deferred
 		end
 
-	long_title: STRING_32
+	long_title: ASTRING
 		deferred
 		end
 
-	description: STRING_32
+	description: ASTRING
 		deferred
 		end
 
-	detail: STRING_32
+	detail: ASTRING
 		deferred
 		end
 
@@ -81,13 +78,13 @@ feature -- Basic operations
 
 	update_properties
 		do
-			properties.set_unique_title (unique_title)
-			properties.set_short_title (title)
-			properties.set_long_title (long_title)
-			properties.set_description (description)
-			properties.set_detail (detail)
+			properties.set_unique_title (unique_title.to_unicode)
+			properties.set_short_title (title.to_unicode)
+			properties.set_long_title (long_title.to_unicode)
+			properties.set_description (description.to_unicode)
+			properties.set_detail (detail.to_unicode)
 			properties.set_pixmap (icon)
-			properties.set_tab_tooltip (long_title)
+			properties.set_tab_tooltip (long_title.to_unicode)
 		end
 
 feature -- Comparison
@@ -98,9 +95,9 @@ feature -- Comparison
 			Result := unique_title < other.unique_title
 		end
 
-feature {EL_DOCKED_TAB_BOOK} -- Access
+feature {EL_DOCKED_TAB_BOOK, SD_WIDGET_FACTORY} -- Access
 
-	properties: SD_CONTENT
+	properties: EL_DOCKING_CONTENT
 		-- tab properties
 
 	tab_book: EL_DOCKED_TAB_BOOK
@@ -119,7 +116,7 @@ feature {EL_DOCKED_TAB_BOOK} -- Element change
 			update_properties
 		end
 
-feature {EL_DOCKED_TAB_BOOK} -- Event handler
+feature {EL_DOCKED_TAB_BOOK, EL_DOCKING_CONTENT} -- Event handler
 
 	on_show
 		do
@@ -134,15 +131,21 @@ feature {EL_DOCKED_TAB_BOOK} -- Event handler
 		do
 		end
 
-feature {NONE} -- Factory
+feature {SD_WIDGET_FACTORY} -- Factory
 
 	new_content_widget: EV_WIDGET
 		deferred
 		end
 
-feature {NONE} -- Implementation
+	new_menu: EV_MENU
+			-- right click menu on tab area
+		do
+			create Result
+		end
 
-	short_title (s: EL_ASTRING): STRING_32
+feature {EL_DOCKING_CONTENT} -- Implementation
+
+	short_title (s: ASTRING): ASTRING
 		do
 			Result := s.substring (1, s.count.min (14)) + ".."
 		end

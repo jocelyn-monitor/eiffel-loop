@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_ID3_FRAME}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-08 9:35:53 GMT (Friday 8th November 2013)"
-	revision: "2"
+	date: "2015-03-11 14:04:14 GMT (Wednesday 11th March 2015)"
+	revision: "4"
 
 deferred class
 	EL_ID3_FRAME
@@ -51,7 +51,7 @@ feature -- Access
 		deferred
 		end
 
-	out: EL_ASTRING
+	out: ASTRING
 			--
 		do
 			create Result.make_empty
@@ -63,10 +63,10 @@ feature -- Access
 					Result.append (field.item.string)
 				else
 					Result.append_character ('[')
-					Result.append (field.item.type_name)
-					Result.append (": ")
+					Result.append_string (field.item.type_name)
+					Result.append_string (": ")
 					if field.item.type = Type_encoding then
-						Result.append (Encoding_names [field.item.integer])
+						Result.append_string (Encoding_names [field.item.integer])
 
 					elseif field.item.is_string then
 						Result.append (field.item.string)
@@ -75,7 +75,7 @@ feature -- Access
 						Result.append_integer (field.item.integer)
 
 					elseif field.item.type = Type_binary_data then
-						Result.append ("size = ")
+						Result.append_string ("size = ")
 						Result.append_integer (field.item.binary_data.count)
 					end
 					Result.append_character (']')
@@ -83,7 +83,7 @@ feature -- Access
 			end
 		end
 
-	string: EL_ASTRING
+	string: ASTRING
 		do
 			Result := string_of_type (Type_string_data)
 		end
@@ -112,12 +112,12 @@ feature -- Access
 			end
 		end
 
-	language: EL_ASTRING
+	language: ASTRING
 		do
 			Result := string_of_type (Type_language)
 		end
 
-	key, description: EL_ASTRING
+	key, description: ASTRING
 		do
 			Result := string_of_type (Type_description)
 		end
@@ -149,7 +149,7 @@ feature -- Access
 
 feature -- Element change
 
-	set_string (str: EL_ASTRING)
+	set_string (str: ASTRING)
 			--
 		do
 			set_string_of_type (Type_string_data, str)
@@ -177,13 +177,13 @@ feature -- Element change
 			end
 		end
 
-	set_language (str: EL_ASTRING)
+	set_language (str: ASTRING)
 			--
 		do
 			set_string_of_type (Type_language, str)
 		end
 
-	set_description (str: EL_ASTRING)
+	set_description (str: ASTRING)
 			--
 		do
 			set_string_of_type (Type_description, str)
@@ -211,7 +211,7 @@ feature -- Status query
 
 feature {EL_ID3_INFO} -- Implementation
 
-	set_string_of_type (type: INTEGER; value: EL_ASTRING)
+	set_string_of_type (type: INTEGER; value: ASTRING)
 		local
 			index: INTEGER
 		do
@@ -221,7 +221,7 @@ feature {EL_ID3_INFO} -- Implementation
 			end
 		end
 
-	string_of_type (type: INTEGER): EL_ASTRING
+	string_of_type (type: INTEGER): ASTRING
 		local
 			index: INTEGER
 		do

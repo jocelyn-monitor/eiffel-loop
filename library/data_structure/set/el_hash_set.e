@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_HASH_SET}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-22 12:26:52 GMT (Friday 22nd November 2013)"
-	revision: "3"
+	date: "2015-05-28 9:25:24 GMT (Thursday 28th May 2015)"
+	revision: "4"
 
 class
 	EL_HASH_SET [G -> HASHABLE]
@@ -18,11 +18,9 @@ inherit
 			put as table_put,
 			item_for_iteration as item,
 			item as table_item,
-			search as table_search,
-			current_keys as as_list
+			current_keys as to_array
 		export
-			{NONE} all
-			{ANY} has, count, new_cursor, as_list
+			{NONE} table_put, force, extend
 		end
 
 	LINEAR [detachable G]
@@ -46,14 +44,6 @@ feature -- Element change
 feature -- Access
 
 	index: INTEGER
-
-feature -- Basic operations
-
-	search (v: like item)
-			--
-		do
-
-		end
 
 feature {NONE} -- Unused
 

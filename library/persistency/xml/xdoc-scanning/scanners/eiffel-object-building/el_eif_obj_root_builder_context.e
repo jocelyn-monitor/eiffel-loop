@@ -1,22 +1,19 @@
-note
+﻿note
 	description: ""
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2012 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2012-12-16 11:34:29 GMT (Sunday 16th December 2012)"
-	revision: "1"
+	date: "2015-01-01 12:02:24 GMT (Thursday 1st January 2015)"
+	revision: "3"
 
 class
 	EL_EIF_OBJ_ROOT_BUILDER_CONTEXT
 
 inherit
 	EL_EIF_OBJ_BUILDER_CONTEXT
-		rename
-			make as make_context
-		end
 
 create
 	make
@@ -26,7 +23,7 @@ feature {NONE} -- Initialization
 	make (a_root_node_xpath: STRING; a_target: like target)
 			--
 		do
-			create xpath.make_empty
+			make_default
 			building_actions := create_building_actions
 
 			root_node_xpath := a_root_node_xpath

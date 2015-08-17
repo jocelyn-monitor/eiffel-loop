@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {INCLUSION_LIST_FILE}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-23 12:54:48 GMT (Sunday 23rd February 2014)"
-	revision: "3"
+	date: "2015-03-11 13:47:32 GMT (Wednesday 11th March 2015)"
+	revision: "5"
 
 class
 	INCLUSION_LIST_FILE
@@ -22,7 +22,7 @@ create
 
 feature {NONE} -- Implementation
 
-	put_file_specifier (specifier_name, file_specifier: EL_ASTRING)
+	put_file_specifier (specifier_name, file_specifier: ASTRING)
 			--
 		local
 			find_files_command: EL_FIND_FILES_COMMAND
@@ -58,17 +58,17 @@ feature {NONE} -- Implementation
 
 feature {NONE} -- Constants
 
-	Specifier_all_files: EL_ASTRING
+	Specifier_all_files: ASTRING
 		once
 			Result := "all-files"
 		end
 
-	Specifier_file: EL_ASTRING
+	Specifier_file: ASTRING
 		once
 			Result := "file"
 		end
 
-	Short_directory_current: EL_ASTRING
+	Short_directory_current: ASTRING
 		once
 			Result := "."
 		end

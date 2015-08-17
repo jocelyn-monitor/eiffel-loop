@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "A Xpath queryable XML node"
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-25 20:06:03 GMT (Tuesday 25th February 2014)"
-	revision: "5"
+	date: "2015-03-11 13:54:26 GMT (Wednesday 11th March 2015)"
+	revision: "7"
 
 class
 	EL_XPATH_NODE_CONTEXT
@@ -93,16 +93,18 @@ feature -- Access
 			log.exit
 		end
 
-	string_at_xpath (a_xpath: STRING_32): EL_ASTRING
+	double_at_xpath (a_xpath: STRING_32): DOUBLE
 			--
 		do
-			Result := new_query (a_xpath).evaluate_string
+			Result := new_query (a_xpath).evaluate_number
 		end
 
-	string_32_at_xpath (a_xpath: STRING_32): STRING_32
+	date_at_xpath (a_xpath: STRING_32): DATE
 			--
+		require
+			days_format: string_at_xpath (a_xpath).is_natural
 		do
-			Result := new_query (a_xpath).evaluate_string_32
+			create Result.make_by_days (integer_at_xpath (a_xpath))
 		end
 
 	integer_at_xpath (a_xpath: STRING_32): INTEGER
@@ -135,10 +137,16 @@ feature -- Access
 			Result := new_query (a_xpath).evaluate_number.truncated_to_real
 		end
 
-	double_at_xpath (a_xpath: STRING_32): DOUBLE
+	string_at_xpath (a_xpath: STRING_32): ASTRING
 			--
 		do
-			Result := new_query (a_xpath).evaluate_number
+			Result := new_query (a_xpath).evaluate_string
+		end
+
+	string_32_at_xpath (a_xpath: STRING_32): STRING_32
+			--
+		do
+			Result := new_query (a_xpath).evaluate_string_32
 		end
 
 feature -- Element change
@@ -198,48 +206,20 @@ feature -- Status query
 
 feature -- Element values
 
-	normalized_string_value: EL_ASTRING
-			-- The leading and trailing white space characters will be stripped.
-			-- The entity and character references will be resolved
-			-- Multiple whitespaces char will be collapsed into one
+	double_value: DOUBLE
+			-- element content as a DOUBLE
+		require
+			value_is_double: normalized_string_value.is_double
 		do
-			Result := wide_string (c_node_context_normalized_string (self_ptr))
+			Result := c_node_context_double (self_ptr)
 		end
 
-	normalized_string_32_value: STRING_32
-			-- The leading and trailing white space characters will be stripped.
-			-- The entity and character references will be resolved
-			-- Multiple whitespaces char will be collapsed into one
+	date_value: DATE
+			-- element content as a DOUBLE
+		require
+			days_format: normalized_string_value.is_natural
 		do
-			Result := wide_string (c_node_context_normalized_string (self_ptr))
-		end
-
-	string_value: EL_ASTRING
-			-- The entity and character references will be resolved
-		do
-			Result := wide_string (c_node_context_string (self_ptr))
-		end
-
-	string_32_value: STRING_32
-			-- The entity and character references will be resolved
-		do
-			Result := wide_string (c_node_context_string (self_ptr))
-		end
-
-	raw_string_value: EL_ASTRING
-			-- element content as string with entities and char references not expanded
-			-- built-in entity and char references not resolved
-			-- entities and char references not expanded
-		do
-			Result := wide_string (c_node_context_raw_string (self_ptr))
-		end
-
-	raw_string_32_value: STRING_32
-			-- element content as wide string with entities and char references not expanded
-			-- built-in entity and char references not resolved
-			-- entities and char references not expanded
-		do
-			Result := wide_string (c_node_context_raw_string (self_ptr))
+			create Result.make_by_days (integer_value)
 		end
 
 	integer_value: INTEGER
@@ -256,6 +236,50 @@ feature -- Element values
 			value_is_integer_64: normalized_string_value.is_integer_64
 		do
 			Result := c_node_context_integer_64 (self_ptr)
+		end
+
+	normalized_string_value: ASTRING
+			-- The leading and trailing white space characters will be stripped.
+			-- The entity and character references will be resolved
+			-- Multiple whitespaces char will be collapsed into one
+		do
+			Result := wide_string (c_node_context_normalized_string (self_ptr))
+		end
+
+	normalized_string_32_value: STRING_32
+			-- The leading and trailing white space characters will be stripped.
+			-- The entity and character references will be resolved
+			-- Multiple whitespaces char will be collapsed into one
+		do
+			Result := wide_string (c_node_context_normalized_string (self_ptr))
+		end
+
+	raw_string_value: ASTRING
+			-- element content as string with entities and char references not expanded
+			-- built-in entity and char references not resolved
+			-- entities and char references not expanded
+		do
+			Result := wide_string (c_node_context_raw_string (self_ptr))
+		end
+
+	raw_string_32_value: STRING_32
+			-- element content as wide string with entities and char references not expanded
+			-- built-in entity and char references not resolved
+			-- entities and char references not expanded
+		do
+			Result := wide_string (c_node_context_raw_string (self_ptr))
+		end
+
+	string_value: ASTRING
+			-- The entity and character references will be resolved
+		do
+			Result := wide_string (c_node_context_string (self_ptr))
+		end
+
+	string_32_value: STRING_32
+			-- The entity and character references will be resolved
+		do
+			Result := wide_string (c_node_context_string (self_ptr))
 		end
 
 	natural_value: NATURAL
@@ -280,14 +304,6 @@ feature -- Element values
 			value_is_real: normalized_string_value.is_real
 		do
 			Result := c_node_context_real (self_ptr)
-		end
-
-	double_value: DOUBLE
-			-- element content as a DOUBLE
-		require
-			value_is_double: normalized_string_value.is_double
-		do
-			Result := c_node_context_double (self_ptr)
 		end
 
 feature {EL_XPATH_NODE_CONTEXT, EL_XPATH_NODE_CONTEXT_LIST, EL_XPATH_NODE_CONTEXT_LIST_ITERATION_CURSOR}

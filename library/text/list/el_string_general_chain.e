@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_READABLE_STRING_GENERAL_LIST}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-05 13:05:03 GMT (Sunday 5th January 2014)"
-	revision: "3"
+	date: "2015-05-31 9:36:18 GMT (Sunday 31st May 2015)"
+	revision: "5"
 
 deferred class
 	EL_STRING_GENERAL_CHAIN [S -> STRING_GENERAL create make, make_empty end]
@@ -21,10 +21,11 @@ feature {NONE} -- Initialization
 		deferred
 		end
 
-	make_with_separator (a_string: like item; separator: CHARACTER_32; left_adjust: BOOLEAN)
+	make_from_array (a: ARRAY [S])
 		do
 			make_empty
-			append_split (a_string, separator, left_adjust)
+			grow (a.count)
+			a.do_all (agent extend)
 		end
 
 	make_with_lines (a_string: like item)
@@ -32,16 +33,15 @@ feature {NONE} -- Initialization
 			make_with_separator (a_string, '%N', False)
 		end
 
+	make_with_separator (a_string: like item; separator: CHARACTER_32; left_adjust: BOOLEAN)
+		do
+			make_empty
+			append_split (a_string, separator, left_adjust)
+		end
+
 	make_with_words (a_string: like item)
 		do
 			make_with_separator (a_string, ' ', False)
-		end
-
-	make_from_array (a: ARRAY [S])
-		do
-			make_empty
-			grow (a.count)
-			a.do_all (agent extend)
 		end
 
 feature -- Element change
@@ -60,6 +60,24 @@ feature -- Element change
 			list.do_all (agent extend)
 		end
 
+	wrap (line_width: INTEGER)
+		local
+			previous_item: S
+		do
+			if not is_empty then
+				from start; forth until after loop
+					previous_item := i_th (index - 1)
+					if (previous_item.count + item.count + 1) < line_width then
+						previous_item.append_code (32)
+						previous_item.append (item)
+						remove
+					else
+						forth
+					end
+				end
+			end
+		end
+
 feature -- Resizing
 
 	grow (i: INTEGER)
@@ -68,6 +86,15 @@ feature -- Resizing
 		end
 
 feature -- Access
+
+	character_count: INTEGER
+			--
+		do
+			from start until after loop
+				Result := Result + item.count
+				forth
+			end
+		end
 
 	comma_separated: like item
 		do
@@ -81,16 +108,16 @@ feature -- Access
 			end
 		end
 
+	joined_character_count: INTEGER
+			--
+		do
+			Result := character_count + (count - 1)
+		end
+
 	joined_lines: like item
 			-- joined with new line characters
 		do
 			Result := joined_with ('%N', False)
-		end
-
-	joined_words: like item
-			-- joined with new line characters
-		do
-			Result := joined_with (' ', False)
 		end
 
 	joined_propercase_words: like item
@@ -105,7 +132,7 @@ feature -- Access
 			Result := joined_with ('%U', False)
 		end
 
-	joined_with (a_separator: CHARACTER_32; propercase: BOOLEAN): like item
+	joined_with (a_separator: CHARACTER_32; proper_case_words: BOOLEAN): like item
 			-- Null character joins without separation
 		do
 			if a_separator = '%U' then
@@ -117,27 +144,27 @@ feature -- Access
 				if index > 1 and a_separator /= '%U' then
 					Result.append_code (a_separator.natural_32_code)
 				end
-				Result.append (item)
-				if propercase and not item.is_empty then
-					Result.put_code (item.item (1).as_upper.natural_32_code, Result.count - item.count + 1)
+				if proper_case_words then
+					Result.append (proper_cased (item))
+				else
+					Result.append (item)
 				end
 				forth
 			end
 		end
 
-	character_count: INTEGER
-			--
+	joined_words: like item
+			-- joined with new line characters
 		do
-			from start until after loop
-				Result := Result + item.count
-				forth
-			end
+			Result := joined_with (' ', False)
 		end
 
-	joined_character_count: INTEGER
-			--
+feature {NONE} -- Implementation
+
+	proper_cased (word: like item): like item
 		do
-			Result := character_count + (count - 1)
+			Result := word.as_lower
+			Result.put_code (word.item (1).as_upper.natural_32_code, 1)
 		end
 
 end

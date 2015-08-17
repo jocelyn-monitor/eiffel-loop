@@ -1,16 +1,16 @@
-note
+﻿note
 	description: "[
 		bytes with a count equal to muliple of a_block_size.
 		Creation area arguments that do not fit exactly are padded with bytes of value equal to the padding count.
 	]"
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2012 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2012-12-16 11:34:31 GMT (Sunday 16th December 2012)"
-	revision: "1"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "3"
 
 class
 	EL_PADDED_BYTE_ARRAY
@@ -108,6 +108,15 @@ feature -- Conversion
 		do
 			create Result.make_from_special (area)
 			Result.remove_tail (padding_count)
+		end
+
+	to_unpadded_data: MANAGED_POINTER
+		local
+			array: like to_unpadded_array
+		do
+			array := to_unpadded_array
+			create Result.make (array.count)
+			Result.put_array (array, 0)
 		end
 
 	unpadded: like area

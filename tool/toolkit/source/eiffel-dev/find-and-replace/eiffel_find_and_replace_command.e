@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EIFFEL_FIND_AND_REPLACE_SOURCE_MANIFEST_EDITOR}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-22 10:04:38 GMT (Saturday 22nd February 2014)"
-	revision: "4"
+	date: "2014-12-11 14:34:36 GMT (Thursday 11th December 2014)"
+	revision: "6"
 
 class
 	EIFFEL_FIND_AND_REPLACE_COMMAND

@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		parse something like: 
 		
@@ -15,8 +15,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-04 10:07:53 GMT (Saturday 4th January 2014)"
-	revision: "2"
+	date: "2015-03-11 17:04:12 GMT (Wednesday 11th March 2015)"
+	revision: "4"
 
 class
 	EL_ROUTINE_CALL_REQUEST_PARSER
@@ -24,11 +24,11 @@ class
 inherit
 	EL_PARSER
 		rename
-			make as make_parser,
+			make_default as make,
 			match_full as parse,
 			source_text as call_request_source_text
 		redefine
-			reset
+			make, reset
 		end
 
 	EL_EIFFEL_PATTERN_FACTORY
@@ -46,7 +46,7 @@ feature {NONE} -- Initialization
 		do
 			create routine_name.make_empty
 			create argument_list.make (3)
-			make_parser
+			Precursor
 		end
 
 feature -- Access
@@ -170,19 +170,19 @@ feature {NONE} -- Parsing match events
 	on_numeric_argument (matched_text: EL_STRING_VIEW)
 			--
 		do
-			argument_list.extend (once "(" + matched_text.view + once ")")
+			argument_list.extend (once "(" + matched_text.to_string_8 + once ")")
 		end
 
 	on_boolean_argument (matched_text: EL_STRING_VIEW)
 			--
 		do
-			argument_list.extend (once "<" + matched_text.view + once ">")
+			argument_list.extend (once "<" + matched_text.to_string_8 + once ">")
 		end
 
 	on_identifier_argument (matched_text: EL_STRING_VIEW)
 			--
 		do
-			argument_list.extend (once "[" + matched_text.view + once "]")
+			argument_list.extend (once "[" + matched_text.to_string_8 + once "]")
 		end
 
 feature {NONE} -- Implementation

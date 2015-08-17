@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Recursive class. Attribute parameter_list may have other references to CONTAINER_PARAMETER"
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2012 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2012-12-16 11:34:22 GMT (Sunday 16th December 2012)"
-	revision: "1"
+	date: "2015-01-01 15:51:32 GMT (Thursday 1st January 2015)"
+	revision: "3"
 
 class
 	CONTAINER_PARAMETER
@@ -15,7 +15,7 @@ class
 inherit
 	PARAMETER
 		redefine
-			default_create, building_action_table, display_item
+			make, building_action_table, display_item
 		end
 
 create
@@ -23,10 +23,10 @@ create
 
 feature {NONE} -- Initialization
 
-	default_create
+	make
 			--
 		do
-			Precursor {PARAMETER}
+			Precursor
 			create parameter_list.make (10)
 		end
 

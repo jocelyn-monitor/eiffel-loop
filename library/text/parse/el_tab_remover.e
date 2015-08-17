@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Class to substitute spaces for tabs"
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-23 10:50:31 GMT (Sunday 23rd February 2014)"
-	revision: "2"
+	date: "2015-03-11 13:57:19 GMT (Wednesday 11th March 2015)"
+	revision: "4"
 
 class
 	EL_TAB_REMOVER
@@ -15,8 +15,7 @@ class
 inherit
 	EL_PARSER
 		rename
-			new_pattern as line_pattern,
-			make as make_parser
+			new_pattern as line_pattern
 		end
 
 	EL_MODULE_LOG
@@ -31,14 +30,14 @@ feature {NONE} -- Initialization
 	make
 			--
 		do
+			make_default
 			create output_text.make_empty
-			make_parser
 			set_tab_size (Default_tab_size)
 		end
 
 feature -- Access
 
-	normalized_text (text: EL_ASTRING; indent: INTEGER): EL_ASTRING
+	normalized_text (text: ASTRING; indent: INTEGER): ASTRING
 			--
 		do
 			output_text.wipe_out
@@ -87,11 +86,11 @@ feature {NONE} -- Match actions
 			tab_count := line_match.count
 		end
 
-	on_line (line_match: EL_STRING_VIEW; gathered_lines: EL_ASTRING)
+	on_line (line_match: EL_STRING_VIEW; gathered_lines: ASTRING)
 			--
 		local
 			i, indent_count: INTEGER
-			line: EL_ASTRING
+			line: ASTRING
 			skip_line: BOOLEAN
 		do
 			line_count := line_count + 1
@@ -135,7 +134,7 @@ feature {NONE} -- Implementation
 
 	indent_tab_count: INTEGER
 
-	output_text: EL_ASTRING
+	output_text: ASTRING
 
 	line_count: INTEGER
 

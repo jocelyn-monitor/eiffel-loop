@@ -1,16 +1,16 @@
-note
+﻿note
 	description: "[
 		Object that asynchronously calls routines in the audio producer thread. The calls are queued until
 		the producer thread gets around to them.
 	]"
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2012 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2012-12-16 11:34:29 GMT (Sunday 16th December 2012)"
-	revision: "1"
+	date: "2014-12-11 14:34:36 GMT (Thursday 11th December 2014)"
+	revision: "3"
 
 class
 	EL_AUDIO_SOURCE_PRODUCER_I [SAMPLE_TYPE -> EL_AUDIO_PCM_SAMPLE create make end]

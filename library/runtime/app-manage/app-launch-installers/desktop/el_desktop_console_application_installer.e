@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_MENU_CONSOLE_APPLICATION_LAUNCHER}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-03-02 15:30:04 GMT (Sunday 2nd March 2014)"
-	revision: "3"
+	date: "2015-03-11 14:03:40 GMT (Wednesday 11th March 2015)"
+	revision: "4"
 
 class
 	EL_DESKTOP_CONSOLE_APPLICATION_INSTALLER
@@ -52,7 +52,7 @@ feature -- Access
 	terminal_height: INTEGER
 		-- height of terminal in characters
 
-	command: EL_ASTRING
+	command: ASTRING
 		do
 			Result := implementation.Command
 		end

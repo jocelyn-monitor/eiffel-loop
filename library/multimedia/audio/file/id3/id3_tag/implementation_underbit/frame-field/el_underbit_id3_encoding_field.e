@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_UNDERBIT_ID3_ENCODING_FIELD}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-05 11:32:01 GMT (Tuesday 5th November 2013)"
-	revision: "3"
+	date: "2015-03-11 14:04:59 GMT (Wednesday 11th March 2015)"
+	revision: "5"
 
 class
 	EL_UNDERBIT_ID3_ENCODING_FIELD
@@ -87,7 +87,7 @@ feature -- Access
 			Result := c_id3_field_type (self_ptr)
 		end
 
-	string: EL_ASTRING
+	string: ASTRING
 		do
 			create Result.make_empty
 		end

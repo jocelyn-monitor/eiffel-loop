@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {JOB_INFO_SET}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-03-02 15:37:24 GMT (Sunday 2nd March 2014)"
-	revision: "4"
+	date: "2015-01-01 13:47:38 GMT (Thursday 1st January 2015)"
+	revision: "5"
 
 class
 	JOBS_RESULT_SET
@@ -19,8 +19,6 @@ inherit
 		end
 
 	EVOLICITY_SERIALIZEABLE_AS_XML
-		rename
-			make as make_xml_serializer
 		redefine
 			getter_function_table, Template
 		end
@@ -35,7 +33,7 @@ feature {NONE} -- Initialization
 		do
 			make_set
 			compare_objects
-			make_xml_serializer
+			make_empty
 			xpath_query := a_xpath_query
 			across document_root_node.context_list (xpath_query) as job loop
 				extend (create {JOB_INFO}.make (job.node))

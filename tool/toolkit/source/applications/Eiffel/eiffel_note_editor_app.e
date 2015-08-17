@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Fills in default values for indexing fields for source trees listed in a manifest"
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-24 11:29:39 GMT (Monday 24th February 2014)"
-	revision: "7"
+	date: "2014-12-11 14:34:36 GMT (Thursday 11th December 2014)"
+	revision: "10"
 
 class
 	EIFFEL_NOTE_EDITOR_APP
@@ -23,8 +23,9 @@ feature -- Testing
 	test_run
 			--
 		do
-			Test.do_file_tree_test ("Eiffel/latin1-sources", agent test_note_edit, 1289329547)
-			Test.do_file_tree_test ("Eiffel/utf8-sources", agent test_note_edit, 402004224)
+--			Test.do_file_tree_test ("Eiffel/sources", agent test_note_edit, 3186546115)
+--			Test.do_file_tree_test ("Eiffel/latin1-sources", agent test_note_edit, 1373941749)
+			Test.do_file_tree_test ("Eiffel/utf8-sources", agent test_note_edit, 1264467643)
 		end
 
 	test_note_edit (a_sources_path: EL_DIR_PATH)

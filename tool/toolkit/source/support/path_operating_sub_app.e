@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Summary description for {PATH_OPERATING_SUB_APPLICATION}."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-06-24 6:51:12 GMT (Monday 24th June 2013)"
-	revision: "2"
+	date: "2014-12-11 14:34:36 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 deferred class
 	PATH_OPERATING_SUB_APP [P -> EL_PATH create make_from_latin1 end]

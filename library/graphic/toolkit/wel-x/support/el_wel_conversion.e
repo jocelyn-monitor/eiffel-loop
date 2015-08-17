@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_WEL_CONVERSION}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-24 11:03:29 GMT (Friday 24th January 2014)"
-	revision: "4"
+	date: "2014-12-11 14:33:27 GMT (Thursday 11th December 2014)"
+	revision: "6"
 
 class
 	EL_WEL_CONVERSION

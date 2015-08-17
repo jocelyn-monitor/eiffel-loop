@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_COPY_FILE_COMMAND}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-05 12:36:20 GMT (Tuesday 5th November 2013)"
-	revision: "3"
+	date: "2015-01-01 18:26:42 GMT (Thursday 1st January 2015)"
+	revision: "4"
 
 class
 	EL_COPY_FILE_COMMAND
@@ -15,13 +15,18 @@ class
 inherit
 	EL_DOUBLE_OPERAND_FILE_SYSTEM_OS_COMMAND [EL_COPY_FILE_IMPL]
 		redefine
-			make, getter_function_table
+			make, default_create, getter_function_table
 		end
 
 create
-	make, make_default
+	make, default_create
 
 feature {NONE} -- Initialization
+
+	default_create
+		do
+			make_command
+		end
 
 	make (a_source_path, a_destination_path: like source_path)
 			--

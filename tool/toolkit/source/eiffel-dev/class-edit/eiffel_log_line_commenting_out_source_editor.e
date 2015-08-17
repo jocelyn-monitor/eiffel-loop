@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		Objects that comments out and comments in 'log.xxx' lines
 	]"
@@ -8,17 +8,14 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-21 9:45:11 GMT (Friday 21st February 2014)"
-	revision: "2"
+	date: "2015-01-01 12:45:56 GMT (Thursday 1st January 2015)"
+	revision: "4"
 
 class
 	EIFFEL_LOG_LINE_COMMENTING_OUT_SOURCE_EDITOR
 
 inherit
 	EIFFEL_SOURCE_EDITING_PROCESSOR
-		redefine
-			make
-		end
 
 create
 	make
@@ -28,7 +25,7 @@ feature {NONE} -- Initialization
 	make
 			--
 		do
-			Precursor
+			make_default
 			create string_tokenizer_by_new_line.make (<<'%N'>>)
 			create string_tokenizer_by_eiffel_comment_marker.make_with_delimiter (
 				Eiffel_comment_marker

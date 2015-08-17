@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-23 10:58:54 GMT (Saturday 23rd November 2013)"
-	revision: "2"
+	date: "2014-12-22 16:15:35 GMT (Monday 22nd December 2014)"
+	revision: "4"
 
 class
 	EL_XML_EMPTY_ELEMENT_PATTERN
@@ -30,7 +30,7 @@ feature {NONE} -- Initialization
 	make (tag_name: STRING; attributes: EL_MATCH_ZERO_OR_MORE_TIMES_TP)
 			--
 		do
-			make_from_other ( named_opening_element (tag_name,"/>", attributes) )
+--			make_from_other (named_opening_element (tag_name,"/>", attributes) )
 			set_name ("empty_element (%"" + tag_name + "%")")
 		end
 

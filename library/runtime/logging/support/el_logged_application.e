@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		Inherit this class from the root class of your application to configure logging output.
 		Call init_logging to configure the logging
@@ -9,8 +9,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-10-22 10:00:04 GMT (Tuesday 22nd October 2013)"
-	revision: "2"
+	date: "2014-12-29 11:59:04 GMT (Monday 29th December 2014)"
+	revision: "3"
 
 deferred class
 	EL_LOGGED_APPLICATION
@@ -33,9 +33,10 @@ feature -- Status query
 
 feature {NONE} -- Implementation
 
-	init_logging (is_logging_active: BOOLEAN; a_log_filters: like log_filter_array)
+	init_logging (is_logging_active: BOOLEAN; a_log_filters: like log_filter_array; output_directory: EL_DIR_PATH)
 			--
 		do
+			log_manager.set_output_directory (output_directory)
 			log_manager.initialize
 			if is_logging_active then
 				logging.activate
@@ -74,4 +75,11 @@ feature {NONE} -- Type definitions
 	Type_logging_filter: TUPLE [class_type: TYPE [EL_MODULE_LOG]; routines: STRING]
 		once
 		end
+
+feature {NONE} -- Constants
+
+	All_routines: STRING = "*"
+
+	No_routines: STRING = "-*"
+
 end

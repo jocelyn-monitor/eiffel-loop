@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_VTD_XML_ATTRIBUTE_API}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-25 10:00:32 GMT (Tuesday 25th February 2014)"
-	revision: "4"
+	date: "2014-12-11 14:33:26 GMT (Thursday 11th December 2014)"
+	revision: "6"
 
 class
 	EL_VTD_XML_ATTRIBUTE_API

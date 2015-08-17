@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_WEL_DISPLAY_MONITOR_INFO}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-03-01 18:17:40 GMT (Saturday 1st March 2014)"
-	revision: "5"
+	date: "2015-06-21 14:27:10 GMT (Sunday 21st June 2015)"
+	revision: "7"
 
 class
 	EL_WEL_DISPLAY_MONITOR_INFO
@@ -78,6 +78,8 @@ feature {NONE} -- Initialization
 			else
 				is_valid := False
 			end
+			log.put_integer_field ("width cms", width_centimeters)
+			log.put_integer_field (" height cms", height_centimeters)
 			log.exit
 		end
 
@@ -158,7 +160,9 @@ feature {NONE} -- Implementation
 		local
 			EDID_registry_path: EL_DIR_PATH
 		do
-			across Win_registry.sub_keys (HKLM_enum_display.joined_dir_path (model)) as key until key.cursor_index > 1 loop
+			log.put_labeled_string ("Model", model)
+			log.put_new_line
+			across Win_registry.key_names (HKLM_enum_display.joined_dir_path (model)) as key until key.cursor_index > 1 loop
 				EDID_registry_path := HKLM_enum_display.joined_dir_steps (<<
 					model, key.item.name.to_string_8, "Device Parameters"
 				>>)

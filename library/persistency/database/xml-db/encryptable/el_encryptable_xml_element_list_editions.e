@@ -1,16 +1,16 @@
-note
+﻿note
 	description: "Summary description for {EL_ENCRYPTABLE_XML_RECORD_OPERATION_LIST}."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-06-18 8:35:00 GMT (Tuesday 18th June 2013)"
-	revision: "2"
+	date: "2015-01-01 14:27:22 GMT (Thursday 1st January 2015)"
+	revision: "4"
 
 class
-	EL_ENCRYPTABLE_XML_ELEMENT_LIST_EDITIONS [STORABLE_TYPE -> {EL_ENCRYPTABLE, EL_STORABLE_XML_ELEMENT} create make end]
+	EL_ENCRYPTABLE_XML_ELEMENT_LIST_EDITIONS [STORABLE_TYPE -> {EL_ENCRYPTABLE, EL_STORABLE_XML_ELEMENT} create make_empty end]
 
 inherit
 	EL_XML_ELEMENT_LIST_EDITIONS [STORABLE_TYPE]

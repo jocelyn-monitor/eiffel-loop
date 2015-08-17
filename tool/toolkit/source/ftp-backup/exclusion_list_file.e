@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EXCLUSION_LIST_FILE}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-23 12:54:42 GMT (Sunday 23rd February 2014)"
-	revision: "3"
+	date: "2015-03-11 13:47:29 GMT (Wednesday 11th March 2015)"
+	revision: "5"
 
 class
 	EXCLUSION_LIST_FILE
@@ -46,7 +46,7 @@ feature {NONE} -- Initialization
 			l_file_path := archive_directory_path + File_name
 			l_file_path.enable_out_abbreviation
 
-			make_open_write (l_file_path.unicode)
+			make_open_write (l_file_path)
 
 			log.put_path_field ("file_name", l_file_path)
 			log.put_new_line
@@ -59,7 +59,7 @@ feature {NONE} -- Initialization
 
 feature {NONE} -- Implementation
 
-	put_file_specifier (specifier_name, file_specifier: EL_ASTRING)
+	put_file_specifier (specifier_name, file_specifier: ASTRING)
 			--
 		do
 			put_string (file_specifier)

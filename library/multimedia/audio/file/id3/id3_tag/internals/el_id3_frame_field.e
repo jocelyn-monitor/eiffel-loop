@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_ID3_FRAME_FIELD}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-05 11:28:15 GMT (Tuesday 5th November 2013)"
-	revision: "2"
+	date: "2015-03-11 14:04:18 GMT (Wednesday 11th March 2015)"
+	revision: "4"
 
 deferred class
 	EL_ID3_FRAME_FIELD
@@ -26,7 +26,7 @@ feature -- Access
 		deferred
 		end
 
-	string: EL_ASTRING
+	string: ASTRING
 			--
 		require
 			valid_type: is_string

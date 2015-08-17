@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		Creates a file context menu entry for application in the OS file manager.
 		In Unix with the GNOME desktop this is implemented using Nautilus-scripts.
@@ -9,8 +9,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-20 13:02:19 GMT (Thursday 20th February 2014)"
-	revision: "3"
+	date: "2015-06-25 13:24:53 GMT (Thursday 25th June 2015)"
+	revision: "4"
 
 class
 	EL_CONTEXT_MENU_SCRIPT_APPLICATION_INSTALLER
@@ -54,7 +54,7 @@ feature -- Basic operations
 		do
 			set_launch_script_path
 
-			File_system.make_directory (launch_script_path.parent ())
+			File_system.make_directory (launch_script_path.parent)
 			io.put_string (launch_script_path.to_string)
 			io.put_new_line
 			write_script (launch_script_path)
@@ -71,7 +71,7 @@ feature -- Basic operations
 			if l_script_file.exists then
 				l_script_file.delete
 			end
-			File_system.delete_empty_steps (launch_script_path.parent.steps)
+			File_system.delete_empty_branch (launch_script_path.parent)
 		end
 
 feature -- Access
@@ -89,7 +89,7 @@ feature -- Access
 	script_file: PLAIN_TEXT_FILE
 			--
 		do
-			create Result.make_with_name (launch_script_path.unicode)
+			create Result.make_with_name (launch_script_path)
 		end
 
 feature {NONE} -- Implementation

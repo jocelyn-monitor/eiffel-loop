@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_HTML_CONSTANTS}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-07-31 7:50:09 GMT (Wednesday 31st July 2013)"
-	revision: "3"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "5"
 
 class
 	EL_HTML_CONSTANTS
@@ -20,7 +20,7 @@ feature -- Constants
 			i: INTEGER
 		once
 			l_entities := Entities
-			create Result.make_with_count (l_entities.count)
+			create Result.make_equal (l_entities.count)
 			from i := l_entities.lower until i > l_entities.upper loop
 				if l_entities [i] /= Default_entity then
 					Result.extend (i.to_natural_32, l_entities [i])

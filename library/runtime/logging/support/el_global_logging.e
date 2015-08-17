@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_GLOBAL_LOGGING}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-10-23 7:11:12 GMT (Wednesday 23rd October 2013)"
-	revision: "4"
+	date: "2015-05-03 10:50:58 GMT (Sunday 3rd May 2015)"
+	revision: "5"
 
 class
 	EL_GLOBAL_LOGGING
@@ -15,7 +15,7 @@ class
 inherit
 	EL_MODULE_ARGS
 
-	EL_MODULE_TYPING
+	EL_MODULE_EIFFEL
 
 	EL_MODULE_LOG_MANAGER
 
@@ -29,7 +29,7 @@ feature {NONE} -- Initialization
 	 make
 			--
 		do
-			make_thread_access
+			make_default
 			create filter_access.make
 
 			create Log_enabled_routines.make (Routine_hash_table_size)
@@ -80,7 +80,7 @@ feature -- Element change
 		require
 			no_thread_logs_created_yet: log_manager.no_thread_logs_created
 		do
-			Args.set_boolean_from_word_option (Command_arg_set_logging_on, agent activate)
+			Args.set_boolean_from_word_option ({EL_LOG_COMMAND_OPTIONS}.Logging, agent activate)
 		end
 
 	set_prompt_user_on_exit (flag: BOOLEAN)
@@ -187,7 +187,7 @@ feature {NONE} -- Implementation
 			if Routine_table.found then
 				Result := Routine_table.found_item
 			else
-				class_name := Typing.type_name_of_type (type_id)
+				class_name := Eiffel.type_name_of_type (type_id)
 				Result := [l_routine_id, type_id, routine_name, class_name]
 				Routine_table.put (Result, l_routine_id)
 			end
@@ -226,11 +226,6 @@ feature -- Type definitions
 		end
 
 feature -- Constants
-
-	Command_arg_set_logging_on: EL_ASTRING
-		once
-			Result := "logging"
-		end
 
 	Max_classes: INTEGER
 			-- Type id must fit into (32 - Num_bits_routine_id) bits

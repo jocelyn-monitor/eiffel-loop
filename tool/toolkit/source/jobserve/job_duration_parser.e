@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {JOB_DURATION_PARSER}."
 
 	author: "Finnian Reilly"
@@ -6,17 +6,14 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-03-28 10:49:31 GMT (Friday 28th March 2014)"
-	revision: "3"
+	date: "2015-01-01 12:36:37 GMT (Thursday 1st January 2015)"
+	revision: "5"
 
 class
 	JOB_DURATION_PARSER
 
 inherit
 	EL_FILE_PARSER
-		redefine
-			make
-		end
 
 	EL_TEXTUAL_PATTERN_FACTORY
 		export
@@ -31,7 +28,7 @@ feature {NONE} -- Initialization
 	make
 			--
 		do
-			Precursor
+			make_default
 			create duration_interval.make (0, 0)
 		end
 
@@ -214,14 +211,14 @@ feature {NONE} -- Match handlers
 	on_integer_from (text: EL_STRING_VIEW)
 			--
 		do
-			integer_from := text.view.to_integer
+			integer_from := text.to_string_8.to_integer
 			integer_to := integer_from
 		end
 
 	on_integer_to (text: EL_STRING_VIEW)
 			--
 		do
-			integer_to := text.view.to_integer
+			integer_to := text.to_string_8.to_integer
 		end
 
 	on_plus_extension (text: EL_STRING_VIEW)

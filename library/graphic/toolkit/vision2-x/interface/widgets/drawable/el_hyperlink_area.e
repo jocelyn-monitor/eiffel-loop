@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_HYPERLINK_AREA}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-03-31 7:03:36 GMT (Monday 31st March 2014)"
-	revision: "5"
+	date: "2015-03-11 13:54:27 GMT (Wednesday 11th March 2015)"
+	revision: "7"
 
 class
 	EL_HYPERLINK_AREA
@@ -37,7 +37,7 @@ feature {NONE} -- Initialization
 			make ("", agent do_nothing, create {EV_FONT}, create {EV_COLOR})
 		end
 
-	make (a_text: EL_ASTRING; a_action: PROCEDURE [ANY, TUPLE]; a_font: EV_FONT; a_background_color: EV_COLOR)
+	make (a_text: ASTRING; a_action: PROCEDURE [ANY, TUPLE]; a_font: EV_FONT; a_background_color: EV_COLOR)
 		do
 			create styled_text.make (1)
 			styled_text.extend (a_text)

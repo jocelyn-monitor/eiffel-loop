@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		typedef struct _XRROutputInfo {
 		    Time	    timestamp;
@@ -33,8 +33,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-25 23:25:20 GMT (Monday 25th November 2013)"
-	revision: "2"
+	date: "2014-12-11 14:33:27 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 class
 	EL_X11_DISPLAY_OUTPUT_INFO

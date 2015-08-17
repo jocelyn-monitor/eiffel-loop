@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "${description}"
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-04 10:12:21 GMT (Saturday 4th January 2014)"
-	revision: "4"
+	date: "2015-03-11 13:47:35 GMT (Wednesday 11th March 2015)"
+	revision: "6"
 
 class
 	PRAAT_GCC_SOURCE_TO_MSVC_CONVERTOR_APP
@@ -20,8 +20,7 @@ inherit
 
 	EVOLICITY_SERIALIZEABLE
 		rename
-			template as build_batch_file_template,
-			make as make_serializeable
+			template as build_batch_file_template
 		export
 			{NONE} all
 		end
@@ -47,7 +46,7 @@ feature {NONE} -- Initialization
 			--
 		do
 			Precursor
-			make_serializeable
+			make_empty
 			directory_content_processor.set_input_dir (tree_path)
 
 			create directory_content_processor.make
@@ -80,7 +79,7 @@ feature -- Basic operations
 			--
 		local
 			build_all_batch_file: EL_FILE_PATH
-			batch_file_name: EL_ASTRING
+			batch_file_name: ASTRING
 		do
 			if attached {STRING} praat_version_no as version_no then
 				directory_content_processor.do_all (agent convert_make_file, "Makefile")
@@ -120,7 +119,7 @@ feature -- Element change
 			praat_version_no := text
 		end
 
-	set_destination_path (a_path: EL_ASTRING)
+	set_destination_path (a_path: ASTRING)
 			--
 		do
 			directory_content_processor.set_output_dir (
@@ -257,7 +256,7 @@ feature {NONE} -- Constants
 		do
 			Result := <<
 				[{PRAAT_GCC_SOURCE_TO_MSVC_CONVERTOR_APP}, "*"],
-				[{EVOLICITY_ENGINE}, "*"],
+				[{EVOLICITY_TEMPLATES}, "*"],
 				[{FILE_PRAAT_C_GCC_TO_MSVC_CONVERTER}, "*"],
 				[{PROCEDURE_PRAAT_RUN_GCC_TO_MSVC_CONVERTER}, "*"]
 			>>

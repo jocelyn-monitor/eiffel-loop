@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Source file converter that overwrites source file with conversion"
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-06-18 8:35:01 GMT (Tuesday 18th June 2013)"
-	revision: "2"
+	date: "2015-01-01 12:41:31 GMT (Thursday 1st January 2015)"
+	revision: "3"
 
 deferred class
 	EL_FILE_EDITING_PROCESSOR
@@ -32,7 +32,7 @@ feature {NONE} -- Initialization
  	make_from_file (a_file_path: EL_FILE_PATH)
  			--
  		do
- 			make
+ 			make_default
  			set_input_file_path (a_file_path)
  		end
 

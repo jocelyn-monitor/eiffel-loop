@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {VCF_CONTACT_SPLITTER_APP}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-20 11:59:54 GMT (Thursday 20th February 2014)"
-	revision: "6"
+	date: "2014-12-11 14:34:36 GMT (Thursday 11th December 2014)"
+	revision: "8"
 
 class
 	VCF_CONTACT_SPLITTER_APP

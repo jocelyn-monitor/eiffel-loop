@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_DELETE_TREE_COMMAND}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-10-09 13:33:16 GMT (Wednesday 9th October 2013)"
-	revision: "2"
+	date: "2015-01-01 18:33:11 GMT (Thursday 1st January 2015)"
+	revision: "3"
 
 class
 	EL_DELETE_TREE_COMMAND
@@ -22,7 +22,7 @@ inherit
 		end
 
 create
-	make, make_default
+	make, default_create
 
 feature {NONE} -- Evolicity reflection
 
@@ -30,7 +30,7 @@ feature {NONE} -- Evolicity reflection
 			--
 		do
 			create Result.make (<<
-				["target_path", agent: EL_ASTRING do Result := escaped_path (target_path) end]
+				["target_path", agent: EL_PATH do Result := target_path end]
 			>>)
 		end
 

@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EIFFEL_CLASS_PREFIX_REMOVER}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-21 9:45:16 GMT (Friday 21st February 2014)"
-	revision: "2"
+	date: "2014-12-11 14:34:36 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 class
 	EIFFEL_CLASS_PREFIX_REMOVER

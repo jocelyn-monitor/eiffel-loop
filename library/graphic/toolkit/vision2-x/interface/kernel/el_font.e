@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_FONT}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-30 4:20:41 GMT (Saturday 30th November 2013)"
-	revision: "3"
+	date: "2015-03-11 13:54:26 GMT (Wednesday 11th March 2015)"
+	revision: "5"
 
 class
 	EL_FONT
@@ -31,7 +31,9 @@ feature {NONE} -- Initialization
 	make_regular (a_family: STRING; a_height_cms: REAL)
 		do
 			default_create
-			preferred_families.extend (a_family)
+			if not a_family.is_empty then
+				preferred_families.extend (a_family)
+			end
 			set_height_cms (a_height_cms)
 		end
 
@@ -49,7 +51,7 @@ feature {NONE} -- Initialization
 
 feature -- Measurement
 
-	string_width_cms (str: EL_ASTRING): REAL
+	string_width_cms (str: ASTRING): REAL
 		do
 			Result := string_width (str) / Screen.horizontal_resolution
 		end

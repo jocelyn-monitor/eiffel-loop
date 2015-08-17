@@ -6,8 +6,8 @@
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-08-05 12:12:42 GMT (Monday 5th August 2013)"
-	revision: "4"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "6"
 
 class
 	EL_ISO_8859_1_CODEC
@@ -102,12 +102,14 @@ feature -- Character query
 			end
 		end
 
-	unicode_case_change_substitute (c: CHARACTER): CHARACTER_32
+	unicode_case_change_substitute (code: NATURAL): CHARACTER_32
 		do
-			inspect c
-				when 'µ' then
+			inspect code
+				-- µ -> Μ
+				when 181 then
 					Result := 'Μ'
-				when 'ÿ' then
+				-- ÿ -> Ÿ
+				when 255 then
 					Result := 'Ÿ'
 			else end
 		end

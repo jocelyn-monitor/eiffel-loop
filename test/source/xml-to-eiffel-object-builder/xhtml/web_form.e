@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,31 +6,31 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-10-16 12:04:05 GMT (Wednesday 16th October 2013)"
-	revision: "3"
+	date: "2015-01-01 14:17:00 GMT (Thursday 1st January 2015)"
+	revision: "5"
 
 class
 	WEB_FORM
 
 inherit
 	EL_BUILDABLE_XML_FILE_PERSISTENT
+		rename
+			make_default as make
 		redefine
-			default_create, building_action_table, getter_function_table
+			make, building_action_table, getter_function_table
 		end
 
 	EL_MODULE_LOG
-		undefine
-			default_create
-		end
 
 create
 	make_from_file, make_from_binary_file, make_from_string, make, make_from_binary_stream
 
 feature {NONE} -- Initialization
 
-	default_create
+	make
 			--
 		do
+			Precursor
 			create component_list.make (7)
 		end
 

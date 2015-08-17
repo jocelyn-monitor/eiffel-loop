@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_EYED3_TAG_TEST_APP}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-23 14:39:41 GMT (Saturday 23rd November 2013)"
-	revision: "3"
+	date: "2015-01-01 14:53:07 GMT (Thursday 1st January 2015)"
+	revision: "5"
 
 class
 	EL_EYED3_TAG_TEST_APP
@@ -38,7 +38,7 @@ feature {NONE} -- Initialization
 
 feature -- Basic operations
 
-	run
+	test_run
 			--
 		do
 			read_version (2.3)
@@ -85,8 +85,8 @@ feature {NONE} -- Constants
 			--
 		do
 			Result := <<
-				[{EL_EYED3_TAG_TEST_APP}, "*"]
---				[{EL_EYED3_TAG}, "*"]
+				[{EL_EYED3_TAG_TEST_APP}, All_routines]
+--				[{EL_EYED3_TAG}, All_routines]
 			>>
 		end
 

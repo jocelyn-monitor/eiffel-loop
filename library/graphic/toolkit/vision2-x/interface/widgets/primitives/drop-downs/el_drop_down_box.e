@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_DROP_DOWN_BOX_2}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-12 11:45:23 GMT (Sunday 12th January 2014)"
-	revision: "4"
+	date: "2015-03-11 13:54:29 GMT (Wednesday 11th March 2015)"
+	revision: "6"
 
 class
 	EL_DROP_DOWN_BOX [G]
@@ -122,7 +122,7 @@ feature -- Element change
 
 feature {NONE} -- Implementation
 
-	displayed_value (value: G): EL_ASTRING
+	displayed_value (value: G): ASTRING
 		do
 			Result := value.out
 		end

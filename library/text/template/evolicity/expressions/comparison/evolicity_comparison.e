@@ -1,13 +1,13 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2012 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2012-12-16 11:34:32 GMT (Sunday 16th December 2012)"
-	revision: "1"
+	date: "2015-05-03 10:50:59 GMT (Sunday 3rd May 2015)"
+	revision: "2"
 
 deferred class
 	EVOLICITY_COMPARISON
@@ -15,7 +15,7 @@ deferred class
 inherit
 	EVOLICITY_BOOLEAN_EXPRESSION
 
-	EL_MODULE_TYPING
+	EL_MODULE_EIFFEL
 
 feature -- Basic operation
 
@@ -60,7 +60,7 @@ feature {NONE} -- Implementation
 			operands: ARRAY [COMPARABLE]
 		do
 			if attached {NUMERIC} left_comparable as left and then attached {NUMERIC} right_comparable as right then
-				type_ids := << Typing.dynamic_type (left), Typing.dynamic_type (right) >>
+				type_ids := << Eiffel.dynamic_type (left), Eiffel.dynamic_type (right) >>
 				if type_ids.there_exists (agent is_floating_type) then
 					operands := double_operands (<< left_comparable, right_comparable >>)
 				else
@@ -138,13 +138,13 @@ feature -- Constants
 	Real_ref_type_id: INTEGER
 			--
 		once
-			Result := Typing.dynamic_type (create {REAL_REF})
+			Result := Eiffel.dynamic_type (create {REAL_REF})
 		end
 
 	Double_ref_type_id: INTEGER
 			--
 		once
-			Result := Typing.dynamic_type (create {DOUBLE_REF})
+			Result := Eiffel.dynamic_type (create {DOUBLE_REF})
 		end
 
 end

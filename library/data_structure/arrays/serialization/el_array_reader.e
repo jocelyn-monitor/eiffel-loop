@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-27 11:58:21 GMT (Monday 27th January 2014)"
-	revision: "3"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "4"
 
 class
 	EL_ARRAY_READER
@@ -40,7 +40,7 @@ feature {NONE} -- File input
 
 			Result := create {LINKED_LIST [ARRAY [DOUBLE]]}.make
 			from
-				create file_in.make_open_read (file_path.unicode)
+				create file_in.make_open_read (file_path)
 				file_in.read_line
 			until
 				file_in.last_string.count = 0
@@ -82,7 +82,7 @@ feature {NONE} -- File input
 
 			Result := create {LINKED_LIST [ARRAY [DOUBLE]]}.make
 			from
-				create file_in.make_open_read (file_path.unicode)
+				create file_in.make_open_read (file_path)
 			until
 				file_in.position = file_in.count
 			loop

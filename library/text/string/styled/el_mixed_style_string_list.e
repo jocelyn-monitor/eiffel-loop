@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		list of strings that should be rendered with either a regular, bold or fixed font
 	]"
@@ -8,8 +8,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-12-22 13:07:37 GMT (Sunday 22nd December 2013)"
-	revision: "4"
+	date: "2014-12-11 14:34:35 GMT (Thursday 11th December 2014)"
+	revision: "5"
 
 class
 	EL_MIXED_STYLE_STRING_LIST

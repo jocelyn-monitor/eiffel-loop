@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_LIBID3_FIELD_IMPL}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-11-04 18:42:31 GMT (Monday 4th November 2013)"
-	revision: "2"
+	date: "2015-03-11 14:04:30 GMT (Wednesday 11th March 2015)"
+	revision: "4"
 
 class
 	EL_LIBID3_FIELD
@@ -73,7 +73,7 @@ feature -- Access
 			end
 		end
 
-	string: EL_ASTRING
+	string: ASTRING
 			--
 		local
 			l_encoding: INTEGER

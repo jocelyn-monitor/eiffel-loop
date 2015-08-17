@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "[
 		Object to record to disk any editions made to current list of XML storable objects. If the list is reloaded 
 		the editions can be reapplied restoring the state of the previous application session. 
@@ -10,15 +10,15 @@ note
 	]"
 
 	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2013 Finnian Reilly"
+	copyright: "Copyright (c) 2001-2014 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-06-28 17:08:28 GMT (Friday 28th June 2013)"
-	revision: "2"
+	date: "2015-01-01 14:23:33 GMT (Thursday 1st January 2015)"
+	revision: "4"
 
 deferred class
-	EL_STORABLE_XML_EDITIONS_LIST [STORABLE_TYPE -> EL_STORABLE_XML_ELEMENT create make end]
+	EL_STORABLE_XML_EDITIONS_LIST [STORABLE_TYPE -> EL_STORABLE_XML_ELEMENT create make_empty end]
 
 inherit
 	LIST [STORABLE_TYPE]

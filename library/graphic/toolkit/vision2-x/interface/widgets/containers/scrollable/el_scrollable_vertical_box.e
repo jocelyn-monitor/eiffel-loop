@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {EL_SCROLLABLE_VERTICAL_BOX}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2013-12-04 8:45:11 GMT (Wednesday 4th December 2013)"
-	revision: "3"
+	date: "2014-12-11 14:33:27 GMT (Thursday 11th December 2014)"
+	revision: "5"
 
 class
 	EL_SCROLLABLE_VERTICAL_BOX

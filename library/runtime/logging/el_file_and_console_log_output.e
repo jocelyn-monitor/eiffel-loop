@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Objects that ..."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-01-25 12:32:28 GMT (Saturday 25th January 2014)"
-	revision: "3"
+	date: "2015-03-11 13:54:28 GMT (Wednesday 11th March 2015)"
+	revision: "4"
 
 class
 	EL_FILE_AND_CONSOLE_LOG_OUTPUT
@@ -41,12 +41,12 @@ create
 
 feature -- Initialization
 
-	make (log_path: EL_PATH; a_thread_name: STRING; a_index: INTEGER)
+	make (log_path: EL_FILE_PATH; a_thread_name: STRING; a_index: INTEGER)
 			-- Create file object with `fn' as file name.
 		do
 			make_output
 			index := a_index
-			make_open_write (log_path.unicode)
+			make_open_write (log_path)
 
 			thread_name := a_thread_name
 			create write_mutex.make
@@ -135,7 +135,7 @@ feature {NONE} -- Implementation
 			write_mutex.unlock
 		end
 
-	write_string (str: EL_ASTRING)
+	write_string (str: ASTRING)
 		do
 			put_file_string (str.to_utf8)
 			if is_directed_to_console.item then

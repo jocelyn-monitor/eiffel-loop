@@ -1,4 +1,4 @@
-note
+﻿note
 	description: "Summary description for {CODEC_GENERATER_APP}."
 
 	author: "Finnian Reilly"
@@ -6,8 +6,8 @@ note
 	contact: "finnian at eiffel hyphen loop dot com"
 	
 	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2014-02-20 11:59:11 GMT (Thursday 20th February 2014)"
-	revision: "3"
+	date: "2014-12-11 14:34:36 GMT (Thursday 11th December 2014)"
+	revision: "5"
 
 class
 	CODEC_GENERATOR_APP
@@ -26,7 +26,7 @@ feature -- Test
 	test_run
 			--
 		do
-			Test.do_file_tree_test ("codec-generation", agent test_generation, 824678951)
+			Test.do_file_tree_test ("codec-generation", agent test_generation, 3741528401)
 		end
 
 	test_generation (dir_path: EL_DIR_PATH)
@@ -77,6 +77,5 @@ feature {NONE} -- Constants
 				[{CODEC_GENERATOR}, "*"]
 			>>
 		end
-
 
 end
